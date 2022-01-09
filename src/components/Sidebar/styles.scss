@@ -14,8 +14,32 @@
   border-bottom-right-radius: 25px;
   overflow: hidden;
 
-  &.active {
+  @media (max-width: var.$tablet__small) {
     width: 75px;
+  }
+
+  @media (max-width: var.$mobile__x-small) {
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+
+    &.active {
+      width: 200px;
+      transform: translateX(0);
+    }
+  }
+
+  .logo {
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 60px;
+      height: 35px;
+      position: relative;
+      top: 0;
+      right: 0;
+      background: var.$logo-secondary no-repeat;
+    }
   }
 
   .sidebar-content {

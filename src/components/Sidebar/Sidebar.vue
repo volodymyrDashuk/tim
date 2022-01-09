@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar" :class="{active: isOpen}">
     <div class="sidebar-logo">
-      T:M
+      <span class="logo"/>
     </div>
     <div class="sidebar-content">
       <ul class="navigation-list">
