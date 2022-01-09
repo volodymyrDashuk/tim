@@ -1,0 +1,65 @@
+.timesheet {
+  border-radius: 25px;
+  background-color: white;
+  width: 70%;
+}
+
+.timesheet-head {
+  border-bottom: 1px solid gray;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .day {
+    border: none;
+    background: none;
+    padding: 7px;
+    border-radius: 25px;
+  }
+
+  .day.active {
+    background: #3324d9;
+    color: #9d9aff;
+  }
+}
+
+.timesheet-table {
+  .table-item {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid gray;
+    }
+  }
+
+  .duration {
+    flex-basis: 20%;
+  }
+
+  .info {
+    width: 100%;
+
+    .notes,
+    .time,
+    .project {
+      display: block;
+    }
+  }
+
+}
+
+.timesheet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 1px solid gray;
+
+  .total {
+    display: flex;
+    flex-direction: column;
+  }
+}
