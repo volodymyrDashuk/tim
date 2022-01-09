@@ -3,7 +3,6 @@
     <a
         href="#"
         class="burger-icon"
-        @click.prevent="$emit('click')"
     />
   </div>
 </template>

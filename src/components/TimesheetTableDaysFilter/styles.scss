@@ -1,11 +1,12 @@
-.timesheet {
-  border-radius: 25px;
-  background-color: white;
-  width: 70%;
-}
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@use "src/styles/variables" as var;
 
 .timesheet-head {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var.$background-basic;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -14,52 +15,13 @@
   .day {
     border: none;
     background: none;
-    padding: 7px;
+    padding: 7px 10px;
     border-radius: 25px;
+    font-size: 13px;
   }
 
   .day.active {
-    background: #3324d9;
-    color: #9d9aff;
-  }
-}
-
-.timesheet-table {
-  .table-item {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-of-type) {
-      border-bottom: 1px solid gray;
-    }
-  }
-
-  .duration {
-    flex-basis: 20%;
-  }
-
-  .info {
-    width: 100%;
-
-    .notes,
-    .time,
-    .project {
-      display: block;
-    }
-  }
-
-}
-
-.timesheet-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  border-top: 1px solid gray;
-
-  .total {
-    display: flex;
-    flex-direction: column;
+    background: var.$primary-color;
+    color: var.$white-basic;
   }
 }

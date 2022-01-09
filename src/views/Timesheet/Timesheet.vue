@@ -9,10 +9,9 @@
         <span class="date">January 2021</span>
       </div>
       <div class="filter-toolbar toggle">
-        <input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
-        <label for="toggle-on" class="label label-left"><span>Week</span></label>
-        <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
-        <label for="toggle-off" class="label label-right"><span>Month</span></label>
+        <input type="checkbox" id="switch" class="switch" />
+        <label for="switch" class="label-day">Day</label>
+        <label for="switch" class="label-month">Month</label>
       </div>
     </div>
     <TimesheetTable />

@@ -1,0 +1,18 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@import "variables.scss";
+@import "fonts.scss";
+@import "global.scss";
+@import "reset.scss";
+@import "src/views/Timesheet/styles.scss";
+@import "src/views/Registration/styles.scss";
+@import "src/views/Login/styles.scss";
+@import "src/components/Burger/styles.scss";
+@import "src/components/Popup/styles.scss";
+@import "src/components/Sidebar/styles.scss";
+@import "src/components/TimesheetTable/styles.scss";
+@import "src/components/TimesheetTableDaysFilter/styles.scss";
+@import "src/components/TimesheetTableItem/styles.scss";

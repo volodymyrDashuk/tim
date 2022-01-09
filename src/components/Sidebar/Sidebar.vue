@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar" :class="{active: isOpen}">
     <div class="sidebar-logo">
-      logo
+      T:M
     </div>
     <div class="sidebar-content">
       <ul class="navigation-list">
@@ -24,10 +24,9 @@
       </ul>
     </div>
     <div class="sidebar-footer">
-      Sidebar footer
+      footer
     </div>
   </aside>
 </template>
 
 <script src="./model.js"/>
-<style lang="scss" src="./styles.scss" />

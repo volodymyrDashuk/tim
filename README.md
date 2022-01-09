@@ -1,4 +1,4 @@
-# time
+# Tim
 
 ## Project setup
 ```

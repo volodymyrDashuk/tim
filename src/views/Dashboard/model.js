@@ -1,8 +1,8 @@
-import TimesheetTable from '../../components/TimesheetTable/TimesheetTable.vue'
+import axios from "axios";
 
 export default {
     name: 'Timesheet',
     components: {
-        TimesheetTable
+
     }
 }

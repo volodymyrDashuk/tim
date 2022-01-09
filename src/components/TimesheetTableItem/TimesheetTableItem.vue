@@ -1,15 +1,16 @@
 <template>
   <div class="table-item">
     <div class="duration">
-      <span>02:00</span>
+      <span>{{timesheetItem.duration}}</span>
     </div>
     <div class="info">
-      <span class="notes">NTS-01: First notes</span>
+      <span class="notes">{{timesheetItem.name}}</span>
       <span class="time">
-                <span class="start-time">13:30 </span>
-                <span class="end-time">15:30</span>
-              </span>
-      <span class="project">Project 1</span>
+        <span class="start-time">{{timesheetItem.start_time}} </span>
+        <span class="separator" />
+        <span class="end-time">{{timesheetItem.end_time}}</span>
+      </span>
+      <span class="project">{{timesheetItem.project}}</span>
     </div>
   </div>
 </template>

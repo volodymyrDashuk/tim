@@ -1,0 +1,21 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@use "src/styles/variables" as var;
+
+
+.burger-icon {
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var.$burger-icon no-repeat;
+
+  @media (max-width: var.$tablet__small) {
+    display: block;
+  }
+}

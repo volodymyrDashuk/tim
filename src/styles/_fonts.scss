@@ -1,0 +1,70 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@use 'variables' as var;
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Thin.woff') format('woff2');
+  font-weight: var.$font-weight__thin;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Ultralight.woff2') format('woff2');
+  font-weight: var.$font-weight__extralight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Light.woff2') format('woff2');
+  font-weight: var.$font-weight__light;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Regular.woff2') format('woff2');
+  font-weight: var.$font-weight__regular;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Medium.woff2') format('woff2');
+  font-weight: var.$font-weight__medium;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Semibold.woff2') format('woff2');
+  font-weight: var.$font-weight__semibold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Bold.woff2') format('woff2');
+  font-weight: var.$font-weight__bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var.$font-family__primary;
+  src: local(var.$font-family__primary), url('#{var.$font-path__primary}-Heavy.woff2') format('woff2');
+  font-weight: var.$font-weight__heavy;
+  font-style: normal;
+  font-display: swap;
+}

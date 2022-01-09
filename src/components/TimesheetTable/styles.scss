@@ -1,54 +1,15 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@use "src/styles/variables" as var;
+
 .timesheet {
-  border-radius: 25px;
+  border-radius: var.$common-radius;
   background-color: white;
   width: 70%;
-}
-
-.timesheet-head {
-  border-bottom: 1px solid gray;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .day {
-    border: none;
-    background: none;
-    padding: 7px;
-    border-radius: 25px;
-  }
-
-  .day.active {
-    background: #3324d9;
-    color: #9d9aff;
-  }
-}
-
-.timesheet-table {
-  .table-item {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-of-type) {
-      border-bottom: 1px solid gray;
-    }
-  }
-
-  .duration {
-    flex-basis: 20%;
-  }
-
-  .info {
-    width: 100%;
-
-    .notes,
-    .time,
-    .project {
-      display: block;
-    }
-  }
-
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .timesheet-footer {
@@ -56,10 +17,21 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border-top: 1px solid gray;
+  border-top: 1px solid var.$background-basic;
 
   .total {
     display: flex;
     flex-direction: column;
+
+    .total-title {
+      color: var.$primary-color;
+      font-size: 16px;
+      font-weight: var.$font-weight__medium;
+    }
+
+    .total-time {
+      font-size: 28px;
+      font-weight: var.$font-weight__bold;
+    }
   }
 }

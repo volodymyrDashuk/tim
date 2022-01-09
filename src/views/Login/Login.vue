@@ -1,34 +1,66 @@
 <template>
-  <form>
-    <div class="title">
-      <h2>Welcome to Time</h2>
+  <div class="auth">
+    <div class="auth-content">
+      <h1>Time</h1>
+      <h3>Most useful time management app</h3>
+      <div class="action-toolbar">
+        <a href="#" class="button-primary">Read More</a>
+      </div>
     </div>
-    <div class="inp">
-      <label class="email" for="email"> Email </label>
-      <input
-          class="email-margin"
-          type="text"
-          id="email"
-          placeholder="emailgmail.com"
-      />
-      <label class="pass" for="pass"> Password </label>
-      <input type="text" id="pass" placeholder="6+ strong character" />
+    <div class="auth-form">
+      <form autocomplete="off" @submit.prevent="submitHandler">
+        <div class="title">
+          <h2>Hello Again!</h2>
+          <h3>Welcome Back</h3>
+        </div>
+        <div class="form-group">
+          <input
+              type="text"
+              placeholder="Email Address"
+              autocomplete="nope"
+              v-model.trim="email"
+              :class="{invalid: v$.email.$error}"
+          >
+          <small
+              class="helper-text error"
+              v-for="(error, index) of v$.email.$errors"
+              :key="index"
+          >
+            {{ error.$message }}
+          </small>
+        </div>
+        <div class="form-group">
+          <input
+              type="password"
+              placeholder="Password"
+              autocomplete="nope"
+              v-model.trim="password"
+              :class="{invalid: v$.password.$error}"
+          >
+          <small
+              class="helper-text invalid"
+              v-for="(error, index) of v$.password.$errors"
+              :key="index"
+          >
+            {{ error.$message }}
+          </small>
+        </div>
+        <div class="action-toolbar">
+          <button
+              type="submit"
+              class="button-primary">
+            Login
+          </button>
+        </div>
+        <div class="action-toolbar">
+          <a href="#">Forgot Password</a>
+        </div>
+        <div class="action-toolbar">
+          <router-link to="/registration">Registration</router-link>
+        </div>
+      </form>
     </div>
-    <div class="button">
-      <button class="btn" type="submit">Enter to account</button>
-    </div>
-    <div class="line">
-      <span> Or sign up with</span>
-    </div>
-    <div class="icon-wrapper">
-      <div class="google">google"</div>
-      <div class="facebook">facebook</div>
-    </div>
-    <div class="down">
-      <span> Have an account? </span>
-      <a href="#"> Sign in </a>
-    </div>
-  </form>
+  </div>
 </template>
 
 <script src="./model.js"/>
