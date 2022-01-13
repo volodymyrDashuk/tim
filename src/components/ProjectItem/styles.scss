@@ -1,0 +1,39 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@use "src/styles/variables" as var;
+
+.card {
+  width: clamp(200px, 50%, 300px);
+  min-height: 150px;
+  border-radius: var.$common-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: var.$white-basic;
+  font-size: 18px;
+
+  .button-close {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: relative;
+      top: 0;
+      right: 0;
+      background: var.$close-icon no-repeat;
+    }
+  }
+}

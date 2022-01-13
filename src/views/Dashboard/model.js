@@ -1,8 +1,7 @@
-import axios from "axios";
+import ProjectList from "../../components/ProjectList/ProjectList";
 
 export default {
-    name: 'Timesheet',
     components: {
-
+        ProjectList
     }
 }
