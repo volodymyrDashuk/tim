@@ -1,3 +1,3 @@
 <template>
-  Activity
+    Activity
 </template>

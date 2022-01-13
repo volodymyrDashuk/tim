@@ -1,11 +1,11 @@
 import useVuelidate from '@vuelidate/core'
-import { required, email, minLength } from '@vuelidate/validators'
+import {required, email, minLength} from '@vuelidate/validators'
 import axios from '../../axios'
 
 export default {
     name: 'registration',
     setup() {
-        return { v$: useVuelidate() };
+        return {v$: useVuelidate()};
     },
     data() {
         return {
@@ -16,13 +16,13 @@ export default {
     },
     validations() {
         return {
-            name: { required },
-            email: { email, required },
-            password: { required, minLength: minLength(8) },
+            name: {required},
+            email: {email, required},
+            password: {required, minLength: minLength(8)},
         };
     },
     methods: {
-        async submitHandler () {
+        async submitHandler() {
             this.v$.$touch();
             if (this.v$.$error) return
             const formData = {

@@ -15,169 +15,169 @@ $color-silver: #bdc3c7;
 $transition-default: 0.25s ease-out 0.10s;
 
 .dashboard {
-  .filter {
-    display: flex;
-    align-items: center;
-    max-width: 70%;
-    margin-bottom: 25px;
-  }
-
-  .filter-toolbar {
-    .button {
-      background: transparent;
-      border: none;
-      display: inline-block;
-      vertical-align: middle;
-      cursor: pointer;
-      line-height: 0;
-
-
-      &[disabled] {
-        cursor: default;
-        opacity: 0.5;
-      }
+    .filter {
+        display: flex;
+        align-items: center;
+        max-width: 70%;
+        margin-bottom: 25px;
     }
 
-    .button-prev,
-    .button-next {
-      &::after {
-        display: inline-block;
-        content: '';
-        width: 25px;
-        height: 25px;
-        position: relative;
-        top: 0;
-        right: 0;
-      }
+    .filter-toolbar {
+        .button {
+            background: transparent;
+            border: none;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            line-height: 0;
+
+
+            &[disabled] {
+                cursor: default;
+                opacity: 0.5;
+            }
+        }
+
+        .button-prev,
+        .button-next {
+            &::after {
+                display: inline-block;
+                content: '';
+                width: 25px;
+                height: 25px;
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        .button-prev {
+            &::after {
+                background: var.$arrow-left-icon no-repeat;
+            }
+        }
+
+        .button-next {
+            &::after {
+                background: var.$arrow-right-icon no-repeat;
+            }
+        }
     }
 
-    .button-prev {
-      &::after {
-        background: var.$arrow-left-icon no-repeat;
-      }
+    .filter-toolbar {
+        padding-right: 10px;
     }
 
-    .button-next {
-      &::after {
-        background: var.$arrow-right-icon no-repeat;
-      }
-    }
-  }
-
-  .filter-toolbar {
-    padding-right: 10px;
-  }
-
-  .filter-toolbar.toggle {
-    margin-left: auto;
-    height: $height;
-    position: relative;
-    width: $width;
-
-    .label-day,
-    .label-month {
-      cursor: pointer;
-      display: block;
-      font-size: 12px;
-      font-weight: bold;
-      line-height: 15px;
-      position: absolute;
-      top: 10px;
-      transition: opacity $transition-default;
-    }
-
-    .label-day {
-      right: 25px;
-    }
-
-    .label-month {
-      color: $color-white;
-      opacity: 0;
-      left: 10px;
-    }
-
-    .switch {
-      appearance: none;
-      height: 0;
-      font-size: 1em;
-      left: 0;
-      line-height: 0;
-      outline: none;
-      position: absolute;
-      top: 0;
-      width: 0;
-
-      &:before,
-      &:after {
-        content: '';
-        font-size: 1em;
-        position: absolute;
-      }
-
-      &:before {
-        border-radius: calc(20 / 16 * 1em);
-        background: var.$secondary-color;
+    .filter-toolbar.toggle {
+        margin-left: auto;
         height: $height;
-        left: -5px;
-        top: 0;
-        transition: background-color $transition-default;
-        width: $width;
-      }
-
-      &:after {
-        box-shadow: 0 .0625em .375em 0 #666;
-        border-radius: 50%;
-        background: $color-white;
-        height: 25px;
-        transform: translate(0, 0);
-        transition: transform $transition-default;
-        width: 25px;
-        top: 4px;
-      }
-
-      &:checked {
-        &:after {
-          transform: translate(60px, 0);
-        }
-
-        & ~ .label-day {
-          opacity: 0;
-        }
-
-        & ~ .label-month {
-          opacity: 1;
-        }
-      }
-
-      &#switch {
-        &:checked:before {
-          background: var.$primary-color;
-        }
-      }
-    }
-  }
-
-  .filter-content {
-    border-left: 1px solid gray;
-    padding-left: 20px;
-
-    .date {
-      display: flex;
-      flex-shrink: 0;
-      align-items: center;
-      font-weight: var.$font-weight__semibold;
-      font-size: 20px;
-      line-height: 24px;
-
-      &::before {
-        display: inline-block;
-        content: '';
-        width: 25px;
-        height: 25px;
         position: relative;
-        background: var.$calendar-icon no-repeat;
-        margin-right: 15px;
-      }
+        width: $width;
+
+        .label-day,
+        .label-month {
+            cursor: pointer;
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 15px;
+            position: absolute;
+            top: 10px;
+            transition: opacity $transition-default;
+        }
+
+        .label-day {
+            right: 25px;
+        }
+
+        .label-month {
+            color: $color-white;
+            opacity: 0;
+            left: 10px;
+        }
+
+        .switch {
+            appearance: none;
+            height: 0;
+            font-size: 1em;
+            left: 0;
+            line-height: 0;
+            outline: none;
+            position: absolute;
+            top: 0;
+            width: 0;
+
+            &:before,
+            &:after {
+                content: '';
+                font-size: 1em;
+                position: absolute;
+            }
+
+            &:before {
+                border-radius: calc(20 / 16 * 1em);
+                background: var.$secondary-color;
+                height: $height;
+                left: -5px;
+                top: 0;
+                transition: background-color $transition-default;
+                width: $width;
+            }
+
+            &:after {
+                box-shadow: 0 .0625em .375em 0 #666;
+                border-radius: 50%;
+                background: $color-white;
+                height: 25px;
+                transform: translate(0, 0);
+                transition: transform $transition-default;
+                width: 25px;
+                top: 4px;
+            }
+
+            &:checked {
+                &:after {
+                    transform: translate(60px, 0);
+                }
+
+                & ~ .label-day {
+                    opacity: 0;
+                }
+
+                & ~ .label-month {
+                    opacity: 1;
+                }
+            }
+
+            &#switch {
+                &:checked:before {
+                    background: var.$primary-color;
+                }
+            }
+        }
     }
-  }
+
+    .filter-content {
+        border-left: 1px solid gray;
+        padding-left: 20px;
+
+        .date {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            font-weight: var.$font-weight__semibold;
+            font-size: 20px;
+            line-height: 24px;
+
+            &::before {
+                display: inline-block;
+                content: '';
+                width: 25px;
+                height: 25px;
+                position: relative;
+                background: var.$calendar-icon no-repeat;
+                margin-right: 15px;
+            }
+        }
+    }
 }

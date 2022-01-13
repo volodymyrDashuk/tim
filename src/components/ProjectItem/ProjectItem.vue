@@ -1,9 +1,9 @@
 <template>
-  <div class="card">
-    <span>{{projectItem.name}}</span>
-    <button class="button-close" />
-  </div>
+    <div class="card">
+        <span>{{ projectItem.name }}</span>
+        <button class="button-close"/>
+    </div>
 </template>
 
 <script src="./model.js"/>
-<style lang="scss" src="./styles.scss" />
+<style lang="scss" src="./styles.scss"/>

@@ -7,15 +7,15 @@
 
 
 .burger-icon {
-  display: none;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: var.$burger-icon no-repeat;
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var.$burger-icon no-repeat;
 
-  @media (max-width: var.$mobile__x-small) {
-    display: block;
-  }
+    @media (max-width: var.$mobile__x-small) {
+        display: block;
+    }
 }

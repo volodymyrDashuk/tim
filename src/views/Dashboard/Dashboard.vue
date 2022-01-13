@@ -1,5 +1,5 @@
 <template>
-  <ProjectList />
+    <ProjectList/>
 </template>
 
 <script src="./model.js"/>

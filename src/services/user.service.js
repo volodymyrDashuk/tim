@@ -5,6 +5,6 @@ const API_URL = 'http://localhost:8080/api/test/';
 
 export default {
     getUser() {
-        return axios.get(API_URL + 'user', { headers: authHeader() });
+        return axios.get(API_URL + 'user', {headers: authHeader()});
     }
 }

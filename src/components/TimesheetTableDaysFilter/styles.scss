@@ -6,22 +6,22 @@
 @use "src/styles/variables" as var;
 
 .timesheet-head {
-  border-bottom: 1px solid var.$background-basic;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    border-bottom: 1px solid var.$background-basic;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  .day {
-    border: none;
-    background: none;
-    padding: 7px 10px;
-    border-radius: 25px;
-    font-size: 13px;
-  }
+    .day {
+        border: none;
+        background: none;
+        padding: 7px 10px;
+        border-radius: 25px;
+        font-size: 13px;
+    }
 
-  .day.active {
-    background: var.$primary-color;
-    color: var.$white-basic;
-  }
+    .day.active {
+        background: var.$primary-color;
+        color: var.$white-basic;
+    }
 }

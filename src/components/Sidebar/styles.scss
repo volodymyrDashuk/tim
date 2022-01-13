@@ -6,148 +6,148 @@
 @use "src/styles/variables" as var;
 
 .sidebar {
-  background: var.$primary-color;
-  width: 220px;
-  padding: 20px 0 20px 15px;
-  flex-shrink: 0;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  overflow: hidden;
+    background: var.$primary-color;
+    width: 220px;
+    padding: 20px 0 20px 15px;
+    flex-shrink: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    overflow: hidden;
 
-  @media (max-width: var.$tablet__small) {
-    width: 75px;
-  }
-
-  @media (max-width: var.$mobile__x-small) {
-    position: fixed;
-    height: 100%;
-    transform: translateX(-100%);
-
-    &.active {
-      width: 200px;
-      transform: translateX(0);
-    }
-  }
-
-  .logo {
-    &::after {
-      display: inline-block;
-      content: '';
-      width: 60px;
-      height: 35px;
-      position: relative;
-      top: 0;
-      right: 0;
-      background: var.$logo-secondary no-repeat;
-    }
-  }
-
-  .sidebar-content {
-    padding-top: 40px;
-  }
-
-  .navigation-item {
-    position: relative;
-  }
-
-  .navigation-link {
-    display: flex;
-    align-items: center;
-    color: var.$white-basic;
-    padding: 15px 0 15px 15px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    font-size: 16px;
-
-
-    &.active {
-      color: red;
+    @media (max-width: var.$tablet__small) {
+        width: 75px;
     }
 
-    &:hover,
-    &.active {
-      background-color: var.$background-basic;
-      color: var.$primary-color;
+    @media (max-width: var.$mobile__x-small) {
+        position: fixed;
+        height: 100%;
+        transform: translateX(-100%);
 
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        width: 50px;
-        height: 50px;
-        background-color: transparent;
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      &:before {
-        top: -50px;
-        box-shadow: 35px 35px 0 10px var.$background-basic;
-      }
-
-      &:after {
-        bottom: -50px;
-        box-shadow: 35px -35px 0 10px var.$background-basic;
-      }
+        &.active {
+            width: 200px;
+            transform: translateX(0);
+        }
     }
-  }
 
-  .navigation-link {
-    .dashboard-icon,
-    .activity-icon,
-    .timesheet-icon {
-      line-height: 0;
-      padding-right: 25px;
+    .logo {
+        &::after {
+            display: inline-block;
+            content: '';
+            width: 60px;
+            height: 35px;
+            position: relative;
+            top: 0;
+            right: 0;
+            background: var.$logo-secondary no-repeat;
+        }
+    }
 
-      &::after {
-        display: inline-block;
-        content: '';
-        width: 20px;
-        height: 20px;
+    .sidebar-content {
+        padding-top: 40px;
+    }
+
+    .navigation-item {
         position: relative;
-        top: 0;
-        right: 0;
-      }
     }
 
-    .dashboard-icon {
-      &::after {
-        background: var.$dashboard-default-icon no-repeat;
-      }
-    }
+    .navigation-link {
+        display: flex;
+        align-items: center;
+        color: var.$white-basic;
+        padding: 15px 0 15px 15px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        font-size: 16px;
 
-    .activity-icon {
-      &::after {
-        background: var.$activity-default-icon no-repeat;
-      }
-    }
 
-    .timesheet-icon {
-      &::after {
-        background: var.$timesheet-default-icon no-repeat;
-      }
-    }
-
-    &:hover,
-    &.active {
-      .dashboard-icon {
-        &::after {
-          background: var.$dashboard-active-icon no-repeat;
+        &.active {
+            color: red;
         }
-      }
 
-      .activity-icon {
-        &::after {
-          background: var.$activity-active-icon no-repeat;
-        }
-      }
+        &:hover,
+        &.active {
+            background-color: var.$background-basic;
+            color: var.$primary-color;
 
-      .timesheet-icon {
-        &::after {
-          background: var.$timesheet-active-icon no-repeat;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 50px;
+                height: 50px;
+                background-color: transparent;
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+            &:before {
+                top: -50px;
+                box-shadow: 35px 35px 0 10px var.$background-basic;
+            }
+
+            &:after {
+                bottom: -50px;
+                box-shadow: 35px -35px 0 10px var.$background-basic;
+            }
         }
-      }
     }
-  }
+
+    .navigation-link {
+        .dashboard-icon,
+        .activity-icon,
+        .timesheet-icon {
+            line-height: 0;
+            padding-right: 25px;
+
+            &::after {
+                display: inline-block;
+                content: '';
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        .dashboard-icon {
+            &::after {
+                background: var.$dashboard-default-icon no-repeat;
+            }
+        }
+
+        .activity-icon {
+            &::after {
+                background: var.$activity-default-icon no-repeat;
+            }
+        }
+
+        .timesheet-icon {
+            &::after {
+                background: var.$timesheet-default-icon no-repeat;
+            }
+        }
+
+        &:hover,
+        &.active {
+            .dashboard-icon {
+                &::after {
+                    background: var.$dashboard-active-icon no-repeat;
+                }
+            }
+
+            .activity-icon {
+                &::after {
+                    background: var.$activity-active-icon no-repeat;
+                }
+            }
+
+            .timesheet-icon {
+                &::after {
+                    background: var.$timesheet-active-icon no-repeat;
+                }
+            }
+        }
+    }
 }

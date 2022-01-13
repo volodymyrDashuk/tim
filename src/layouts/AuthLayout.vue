@@ -1,18 +1,18 @@
 <template>
-  <router-view />
+    <router-view/>
 </template>
 
 <script>
-  export default {
+export default {
     computed: {
-      error() {
-        return this.$store.getters.error
-      }
+        error() {
+            return this.$store.getters.error
+        }
     },
     watch: {
-      error(fbError) {
-        console.log(fbError.message)
-      }
+        error(fbError) {
+            console.log(fbError.message)
+        }
     }
-  }
+}
 </script>

@@ -6,32 +6,32 @@
 @use "src/styles/variables" as var;
 
 .timesheet {
-  border-radius: var.$common-radius;
-  background-color: white;
-  width: 70%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: var.$common-radius;
+    background-color: white;
+    width: 70%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .timesheet-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  border-top: 1px solid var.$background-basic;
-
-  .total {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid var.$background-basic;
 
-    .total-title {
-      color: var.$primary-color;
-      font-size: 16px;
-      font-weight: var.$font-weight__medium;
-    }
+    .total {
+        display: flex;
+        flex-direction: column;
 
-    .total-time {
-      font-size: 28px;
-      font-weight: var.$font-weight__bold;
+        .total-title {
+            color: var.$primary-color;
+            font-size: 16px;
+            font-weight: var.$font-weight__medium;
+        }
+
+        .total-time {
+            font-size: 28px;
+            font-weight: var.$font-weight__bold;
+        }
     }
-  }
 }

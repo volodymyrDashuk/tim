@@ -6,47 +6,47 @@
 @use "src/styles/variables" as var;
 
 .timesheet-table {
-  .table-item {
-    padding: 20px;
-    display: flex;
-    align-items: center;
+    .table-item {
+        padding: 20px;
+        display: flex;
+        align-items: center;
 
-    &:not(:last-of-type) {
-      border-bottom: 1px solid var.$background-basic;
+        &:not(:last-of-type) {
+            border-bottom: 1px solid var.$background-basic;
+        }
+
+        .duration {
+            flex-basis: 25%;
+            font-size: 28px;
+            font-weight: var.$font-weight__semibold;
+        }
+
+        .time {
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+        }
+
+        .notes {
+            margin-bottom: 7px;
+        }
+
+        .separator {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var.$black-basic;
+            margin: 0 8px
+        }
+
+        .info {
+            width: 100%;
+
+            .notes,
+            .separator,
+            .project {
+                display: block;
+            }
+        }
     }
-
-    .duration {
-      flex-basis: 25%;
-      font-size: 28px;
-      font-weight: var.$font-weight__semibold;
-    }
-
-    .time {
-      display: flex;
-      align-items: center;
-      margin-bottom: 7px;
-    }
-
-    .notes {
-      margin-bottom: 7px;
-    }
-
-    .separator {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var.$black-basic;
-      margin: 0 8px
-    }
-
-    .info {
-      width: 100%;
-
-      .notes,
-      .separator,
-      .project {
-        display: block;
-      }
-    }
-  }
 }

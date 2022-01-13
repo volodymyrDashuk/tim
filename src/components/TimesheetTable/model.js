@@ -12,7 +12,7 @@ export default {
         Popup
     },
     setup() {
-        return { v$: useVuelidate() };
+        return {v$: useVuelidate()};
     },
     data() {
         return {
@@ -26,10 +26,10 @@ export default {
     },
     validations() {
         return {
-            project: { required },
-            note: { required },
-            startTime: { required },
-            endTime: { required },
+            project: {required},
+            note: {required},
+            startTime: {required},
+            endTime: {required},
         };
     },
     methods: {
@@ -68,6 +68,6 @@ export default {
         }
     },
     mounted() {
-       this.refreshData();
+        this.refreshData();
     }
 }

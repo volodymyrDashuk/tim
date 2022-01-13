@@ -11,7 +11,7 @@ export default {
         Popup
     },
     setup() {
-        return { v$: useVuelidate() };
+        return {v$: useVuelidate()};
     },
     data() {
         return {
@@ -22,7 +22,7 @@ export default {
     },
     validations() {
         return {
-            projectName: { required }
+            projectName: {required}
         };
     },
     methods: {

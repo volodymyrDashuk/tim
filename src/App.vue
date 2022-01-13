@@ -4,25 +4,25 @@
 */
 
 <template>
-  <component :is="layout">
-    <router-view/>
-  </component>
+    <component :is="layout">
+        <router-view/>
+    </component>
 </template>
 
 <script>
-  import AuthLayout from "@/layouts/AuthLayout";
-  import MainLayout from "@/layouts/MainLayout";
+import AuthLayout from "@/layouts/AuthLayout";
+import MainLayout from "@/layouts/MainLayout";
 
-  export default {
+export default {
     computed: {
-      layout() {
-        return (this.$route.meta.layout || 'Auth') + '-layout'
-      }
+        layout() {
+            return (this.$route.meta.layout || 'Auth') + '-layout'
+        }
     },
     components: {
-      AuthLayout, MainLayout
+        AuthLayout, MainLayout
     }
-  }
+}
 </script>
 
-<style lang="scss" src="./styles/app.scss" />
+<style lang="scss" src="./styles/app.scss"/>

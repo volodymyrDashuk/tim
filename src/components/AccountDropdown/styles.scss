@@ -10,68 +10,68 @@
 $dropdown-width: 150px;
 
 .dropdown {
-  max-width: $dropdown-width;
-  width: 100%;
-  margin-left: auto;
-
-  .dropdown-button {
-    display: flex;
-    align-items: center;
-    border: none;
-    background: none;
-
-    span {
-      margin-right: 10px;
-    }
-
-    img {
-      width: 30px;
-      height: 30px;
-    }
-
-    &:after {
-      display: inline-block;
-      content: '';
-      width: 15px;
-      height: 15px;
-      position: relative;
-      background: var.$arrow-bottom-icon no-repeat;
-      margin-left: 15px;
-    }
-  }
-
-  .dropdown-content {
-    position: relative;
-  }
-
-  .dropdown-list {
-    position: absolute;
-    top: 0;
+    max-width: $dropdown-width;
     width: 100%;
-    background: var.$white-basic;
-    margin-top: 5px;
-    padding: 5px;
-    border-radius: var.$common-radius / 5;
-    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-  }
+    margin-left: auto;
 
-  .dropdown-item {
+    .dropdown-button {
+        display: flex;
+        align-items: center;
+        border: none;
+        background: none;
 
-  }
+        span {
+            margin-right: 10px;
+        }
 
-  .dropdown-list-link {
-    color: var.$primary-color;
-    font-size: 16px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
 
-    &:before {
-      display: inline-block;
-      content: '';
-      width: 15px;
-      height: 17px;
-      position: relative;
-      background: var.$logout-icon no-repeat;
-      margin-right: 5px;
-      vertical-align: middle;
+        &:after {
+            display: inline-block;
+            content: '';
+            width: 15px;
+            height: 15px;
+            position: relative;
+            background: var.$arrow-bottom-icon no-repeat;
+            margin-left: 15px;
+        }
     }
-  }
+
+    .dropdown-content {
+        position: relative;
+    }
+
+    .dropdown-list {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: var.$white-basic;
+        margin-top: 5px;
+        padding: 5px;
+        border-radius: var.$common-radius / 5;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    }
+
+    .dropdown-item {
+
+    }
+
+    .dropdown-list-link {
+        color: var.$primary-color;
+        font-size: 16px;
+
+        &:before {
+            display: inline-block;
+            content: '';
+            width: 15px;
+            height: 17px;
+            position: relative;
+            background: var.$logout-icon no-repeat;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    }
 }
