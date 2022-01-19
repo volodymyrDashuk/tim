@@ -21,7 +21,8 @@ export default {
             note: "",
             startTime: "",
             endTime: "",
-            isModalShow: false
+            isModalShow: false,
+            totalDuration: ""
         };
     },
     validations() {
@@ -48,6 +49,7 @@ export default {
             try {
                 const response = await axios.get('task-times')
                 this.timesheetItems = response.data.data
+                this.totalDuration = response.data.duration_sum
             } catch (e) {
                 console.log(e)
             }

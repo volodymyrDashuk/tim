@@ -11,7 +11,7 @@
         <div class="timesheet-footer">
             <div class="total">
                 <span class="total-title">Total</span>
-                <span class="total-time">07:30</span>
+                <span class="total-time">{{totalDuration}}</span>
             </div>
             <div class="action-toolbar">
                 <button class="button-primary" @click="showModal">Add new entry</button>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="form-group">
                         <input
-                            type="text"
+                            type="time"
                             placeholder="Start time"
                             autocomplete="nope"
                             v-model.trim="startTime"
@@ -87,7 +87,7 @@
                     </div>
                     <div class="form-group">
                         <input
-                            type="text"
+                            type="time"
                             placeholder="End Time"
                             autocomplete="nope"
                             v-model.trim="endTime"

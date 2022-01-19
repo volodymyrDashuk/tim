@@ -49,7 +49,13 @@
             }
         }
 
-        .delete {
+        .action-toolbar {
+            display: flex;
+            aline-items: center;
+        }
+
+        .delete,
+        .edit{
             background: none;
             border: none;
 
@@ -59,9 +65,20 @@
                 width: 20px;
                 height: 20px;
                 position: relative;
-                background: var.$remove-icon no-repeat;
                 margin-right: 5px;
                 vertical-align: middle;
+            }
+        }
+
+        .delete {
+            &:before {
+                background: var.$remove-icon no-repeat;
+            }
+        }
+
+        .edit {
+            &:before {
+                background: var.$edit-icon no-repeat;
             }
         }
     }

@@ -14,6 +14,11 @@
         </div>
         <div class="action-toolbar">
             <button
+                class="edit"
+                @click="editItem"
+            />
+
+            <button
                 class="delete"
                 @click="removeItem"
             />
