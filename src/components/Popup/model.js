@@ -1,6 +1,6 @@
 export default {
     name: 'popUp',
-    props: ['refreshData', 'isModalShow'],
+    props: ['isModalShow'],
     methods: {
         onCloseModal() {
             this.$emit('onCloseModal')

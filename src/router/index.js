@@ -20,6 +20,12 @@ const routes = [
         component: () => import('../views/Dashboard/Dashboard.vue')
     },
     {
+        path: '/project',
+        name: 'Project',
+        meta: {layout: 'Main'},
+        component: () => import('../views/Project/Project.vue')
+    },
+    {
         path: '/activity',
         name: 'Activity',
         meta: {layout: 'Main'},

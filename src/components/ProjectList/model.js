@@ -34,11 +34,9 @@ export default {
             this.projectName = ''
         },
         refreshData: async function () {
-            console.log('start refreshData')
             try {
                 const response = await axios.get('projects')
                 this.projectItems = response.data.data
-                console.log('finish refreshData')
             } catch (e) {
                 console.log(e)
             }

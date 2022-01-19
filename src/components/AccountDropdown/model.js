@@ -10,7 +10,8 @@ export default {
                     name: "Logout",
                     class: "logout"
                 }
-            ]
+            ],
+            name: ''
         };
     },
     methods: {
@@ -23,6 +24,13 @@ export default {
 
             await this.$router.push('/login')
             console.log('end logout')
+        },
+        async getUserName() {
+            const response = await axios.get('me')
+            this.name = response.data.data.user.name;
         }
+    },
+    mounted() {
+        this.getUserName();
     }
 }

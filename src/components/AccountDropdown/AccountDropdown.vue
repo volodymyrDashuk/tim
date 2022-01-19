@@ -3,7 +3,8 @@
         <button class="dropdown-button"
                 v-on:click.prevent="showDropDown=!showDropDown"
         >
-            <span>Vova</span>
+            <span>Aloha</span>
+            <span>{{ name }}</span>
             <!--   ToDo: change src for img   -->
             <img src="https://www.iconpacks.net/icons/2/free-icon-user-4249.png" alt="user">
         </button>

@@ -1,5 +1,5 @@
 <template>
-    <h1>Dashboard</h1>
+    <ProjectList/>
 </template>
 
 <script src="./model.js"/>

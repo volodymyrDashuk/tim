@@ -96,6 +96,7 @@
     .navigation-link {
         .dashboard-icon,
         .activity-icon,
+        .project-icon,
         .timesheet-icon {
             line-height: 0;
             padding-right: 25px;
@@ -117,6 +118,12 @@
             }
         }
 
+        .project-icon {
+            &::after {
+                background: var.$project-default-icon no-repeat;
+            }
+        }
+
         .activity-icon {
             &::after {
                 background: var.$activity-default-icon no-repeat;
@@ -134,6 +141,12 @@
             .dashboard-icon {
                 &::after {
                     background: var.$dashboard-active-icon no-repeat;
+                }
+            }
+
+            .project-icon {
+                &::after {
+                    background: var.$project-active-icon no-repeat;
                 }
             }
 
