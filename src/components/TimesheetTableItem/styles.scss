@@ -48,5 +48,21 @@
                 display: block;
             }
         }
+
+        .delete {
+            background: none;
+            border: none;
+
+            &:before {
+                display: inline-block;
+                content: '';
+                width: 20px;
+                height: 20px;
+                position: relative;
+                background: var.$remove-icon no-repeat;
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+        }
     }
 }

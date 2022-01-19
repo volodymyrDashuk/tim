@@ -50,8 +50,8 @@ export default {
                 name: this.projectName
             }
             const response = await axios.post('projects', formData)
-            this.refreshData();
-            this.$refs.popup.showModal = false
+            this.refreshData()
+            this.closeModal()
         }
     },
     mounted() {

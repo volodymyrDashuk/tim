@@ -51,7 +51,7 @@ $dropdown-width: 150px;
         background: var.$white-basic;
         margin-top: 5px;
         padding: 5px;
-        border-radius: var.$common-radius / 5;
+        border-radius: calc(var.$common-radius / 5);
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
     }
 

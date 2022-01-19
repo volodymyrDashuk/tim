@@ -1,6 +1,10 @@
 <template>
     <div class="card-list">
-        <projectItem v-for="projectItem in projectItems" :projectItem="projectItem"/>
+        <projectItem
+            v-for="projectItem in projectItems"
+            :projectItem="projectItem"
+            :refreshData="refreshData"
+        />
     </div>
     <div class="action-toolbar">
         <button class="button-primary" @click="showModal">Add project</button>

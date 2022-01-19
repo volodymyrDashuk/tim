@@ -64,7 +64,7 @@ export default {
             }
             const response = await axios.post('task-times', formData)
             this.refreshData();
-            this.$refs.popup.showModal = false
+            this.closeModal()
         }
     },
     mounted() {

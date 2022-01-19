@@ -2,7 +2,11 @@
     <div class="timesheet">
         <timesheet-table-days-filter/>
         <div class="timesheet-table">
-            <timesheet-table-item v-for="timesheetItem of timesheetItems" :timesheetItem="timesheetItem"/>
+            <timesheet-table-item
+                v-for="timesheetItem of timesheetItems"
+                :timesheetItem="timesheetItem"
+                :refreshData="refreshData"
+            />
         </div>
         <div class="timesheet-footer">
             <div class="total">
