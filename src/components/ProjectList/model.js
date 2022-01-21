@@ -50,6 +50,9 @@ export default {
             const response = await axios.post('projects', formData)
             this.refreshData()
             this.closeModal()
+            this.$nextTick(() => {
+                this.v$.$reset()
+            })
         }
     },
     mounted() {

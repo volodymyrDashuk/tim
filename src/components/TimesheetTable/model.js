@@ -67,6 +67,9 @@ export default {
             const response = await axios.post('task-times', formData)
             this.refreshData();
             this.closeModal()
+            this.$nextTick(() => {
+                this.v$.$reset()
+            })
         }
     },
     mounted() {
