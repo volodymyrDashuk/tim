@@ -21,13 +21,20 @@ export default {
                 'logout'
             )
             localStorage.removeItem('token')
+            localStorage.removeItem('user')
 
             await this.$router.push('/login')
             console.log('end logout')
         },
         async getUserName() {
-            const response = await axios.get('me')
-            this.name = response.data.data.user.name;
+            await axios
+                .get('me')
+                .then(response => {
+                    this.name = response.data.data.user.name;
+                })
+                .catch(error => {
+                    console.log(error)
+                })
         }
     },
     mounted() {

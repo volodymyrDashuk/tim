@@ -1,0 +1,57 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2022 Volodymyr Dashuk
+*/
+
+@use "src/styles/variables" as var;
+
+.no-route{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(124deg,
+            var.$primary-color,
+            var.$secondary-color
+    );
+    background-size: 1800% 1800%;
+    -webkit-animation: gradient 12s ease infinite;
+    -z-animation: gradient 12s ease infinite;
+    -o-animation: gradient 12s ease infinite;
+    animation: gradient 12s ease infinite;
+
+    h1{
+        font-size: 50px;
+        display: inline-block;
+        padding-right: 15px;
+        animation: type .5s alternate infinite;
+        color: var.$white-basic;
+    }
+}
+
+@keyframes type{
+    from{box-shadow: inset -3px 0px 0px var.$white-basic;}
+    to{box-shadow: inset -3px 0px 0px transparent;}
+}
+
+@-webkit-keyframes gradient {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes gradient {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes gradient {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
