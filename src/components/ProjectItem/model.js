@@ -1,13 +1,12 @@
-import axios from "../../axios";
+import {mapActions} from "vuex"
 
 export default {
     name: 'ProjectItem',
-    props: ['projectItem', 'refreshData'],
+    props: ['projectItem'],
     methods: {
-        async removeCard() {
-            console.log('start delete')
-            const response = await axios.delete(`projects/${this.projectItem.id}`)
-            this.refreshData();
+        ...mapActions(['removeProject']),
+        removeCard() {
+            this.removeProject(this.projectItem.id)
         }
     }
 }

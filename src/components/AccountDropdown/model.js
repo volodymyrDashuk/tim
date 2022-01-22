@@ -1,4 +1,5 @@
 import axios from "../../axios";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
     name: 'AccountDropdown',
@@ -10,34 +11,24 @@ export default {
                     name: "Logout",
                     class: "logout"
                 }
-            ],
-            name: ''
+            ]
         };
     },
     methods: {
+        ...mapActions(['user']),
         async logout() {
-            console.log('start logout')
             const response = await axios.post(
                 'logout'
             )
             localStorage.removeItem('token')
             localStorage.removeItem('user')
-
             await this.$router.push('/login')
-            console.log('end logout')
         },
-        async getUserName() {
-            await axios
-                .get('me')
-                .then(response => {
-                    this.name = response.data.data.user.name;
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-        }
+    },
+    computed: {
+        ...mapGetters(['getUserName'])
     },
     mounted() {
-        this.getUserName();
+        this.user();
     }
 }

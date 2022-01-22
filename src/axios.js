@@ -1,10 +1,19 @@
 import axios from 'axios'
 
-export default axios.create({
+const http = axios.create({
     baseURL: 'http://tim-api.loc/api/',
     timeout: 100000,
     headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Content-Type': 'application/json'
     }
 })
+
+http.interceptors.request.use(request => {
+    const token = localStorage.getItem('token')
+    if (!!token) {
+        request.headers.common.Authorization = `Bearer ${token}`;
+    }
+    return request;
+});
+
+export default http;

@@ -3,15 +3,14 @@
         <timesheet-table-days-filter/>
         <div class="timesheet-table">
             <timesheet-table-item
-                v-for="timesheetItem of timesheetItems"
+                v-for="timesheetItem of getTimesheet"
                 :timesheetItem="timesheetItem"
-                :refreshData="refreshData"
             />
         </div>
         <div class="timesheet-footer">
             <div class="total">
                 <span class="total-title">Total</span>
-                <span class="total-time">{{totalDuration}}</span>
+                <span class="total-time">{{getTotalDuration}}</span>
             </div>
             <div class="action-toolbar">
                 <button class="button-primary" @click="showModal">Add new entry</button>
@@ -20,7 +19,6 @@
     </div>
     <Popup
         :isModalShow="isModalShow"
-        :refreshData="refreshData"
         @onCloseModal="closeModal"
     >
         <template #pop-up-form>

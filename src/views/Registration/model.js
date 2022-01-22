@@ -34,7 +34,9 @@ export default {
                 'register',
                 formData
             )
-            await this.$router.push('/login')
+            localStorage.setItem('token', response.data.data.token)
+            localStorage.setItem('user', true)
+            await this.$router.push('/')
         },
     }
 }

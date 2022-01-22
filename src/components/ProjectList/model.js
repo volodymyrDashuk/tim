@@ -1,8 +1,8 @@
 import ProjectItem from "../ProjectItem/ProjectItem"
 import Popup from "../Popup/Popup";
-import axios from "../../axios";
 import useVuelidate from "@vuelidate/core";
 import {required} from "@vuelidate/validators";
+import {mapGetters, mapActions} from "vuex"
 
 export default {
     name: 'ProjectList',
@@ -15,7 +15,6 @@ export default {
     },
     data() {
         return {
-            projectItems: [],
             projectName: "",
             isModalShow: false
         };
@@ -26,6 +25,7 @@ export default {
         };
     },
     methods: {
+        ...mapActions(['fetchProjects', 'createProject']),
         showModal: function () {
             this.isModalShow = true
         },
@@ -33,29 +33,22 @@ export default {
             this.isModalShow = false
             this.projectName = ''
         },
-        refreshData: async function () {
-            try {
-                const response = await axios.get('projects')
-                this.projectItems = response.data.data
-            } catch (e) {
-                console.log(e)
-            }
-        },
-        async submitHandler() {
+        submitHandler() {
             this.v$.$touch()
             if (this.v$.$error) return
-            const formData = {
+            this.createProject ({
                 name: this.projectName
-            }
-            const response = await axios.post('projects', formData)
-            this.refreshData()
+            })
             this.closeModal()
             this.$nextTick(() => {
                 this.v$.$reset()
             })
         }
     },
+    computed: {
+        ...mapGetters(['getProjects'])
+    },
     mounted() {
-        this.refreshData();
+        this.fetchProjects()
     }
 }

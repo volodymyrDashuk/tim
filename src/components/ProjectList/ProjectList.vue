@@ -1,9 +1,8 @@
 <template>
     <div class="card-list">
         <projectItem
-            v-for="projectItem in projectItems"
+            v-for="projectItem in getProjects"
             :projectItem="projectItem"
-            :refreshData="refreshData"
         />
     </div>
     <div class="action-toolbar">

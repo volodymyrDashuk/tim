@@ -1,19 +1,12 @@
 import {createStore} from 'vuex'
+import projects from './modules/projects'
+import timesheet from './modules/timesheet'
+import currentUser from './modules/currentUser'
 
 export default createStore({
-    state: {
-        error: null
-    },
-    mutations: {
-        setError(state, error) {
-            state.error = error
-        },
-        clearError(state) {
-            state.error = null
-        }
-    },
-    getters: {
-        error: s => s.error
-    },
-    modules: {}
+    modules: {
+        projects,
+        timesheet,
+        currentUser
+    }
 })

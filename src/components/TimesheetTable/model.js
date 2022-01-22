@@ -1,9 +1,9 @@
 import TimesheetTableDaysFilter from '../../components/TimesheetTableDaysFilter/TimesheetTableDaysFilter.vue'
 import TimesheetTableItem from '../../components/TimesheetTableItem/TimesheetTableItem.vue'
 import Popup from '../../components/Popup/Popup.vue'
-import axios from '../../axios'
 import useVuelidate from "@vuelidate/core";
 import {required} from "@vuelidate/validators";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
     components: {
@@ -16,13 +16,11 @@ export default {
     },
     data() {
         return {
-            timesheetItems: [],
             project: "",
             note: "",
             startTime: "",
             endTime: "",
             isModalShow: false,
-            totalDuration: ""
         };
     },
     validations() {
@@ -34,6 +32,7 @@ export default {
         };
     },
     methods: {
+        ...mapActions(['createTimesheet', 'fetchTimesheet']),
         showModal: function () {
             this.isModalShow = true
         },
@@ -44,35 +43,26 @@ export default {
             this.startTime = ''
             this.endTime = ''
         },
-        refreshData: async function () {
-            console.log('start refreshData')
-            try {
-                const response = await axios.get('task-times')
-                this.timesheetItems = response.data.data
-                this.totalDuration = response.data.duration_sum
-            } catch (e) {
-                console.log(e)
-            }
-        },
         async submitHandler() {
             this.v$.$touch()
             if (this.v$.$error) return
-            const formData = {
+            this.createTimesheet({
                 project: this.project,
                 name: this.note,
                 start_time: this.startTime,
                 end_time: this.endTime,
                 date: new Date(2011, 0, 1, 0, 0, 0, 0)
-            }
-            const response = await axios.post('task-times', formData)
-            this.refreshData();
+            })
             this.closeModal()
             this.$nextTick(() => {
                 this.v$.$reset()
             })
         }
     },
+    computed: {
+        ...mapGetters(['getTimesheet', 'getTotalDuration'])
+    },
     mounted() {
-        this.refreshData();
+        this.fetchTimesheet();
     }
 }

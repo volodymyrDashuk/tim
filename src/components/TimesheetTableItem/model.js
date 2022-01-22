@@ -1,14 +1,11 @@
-import axios from "../../axios";
+import {mapActions} from "vuex";
 
 export default {
-    props: ['timesheetItem', 'refreshData'],
+    props: ['timesheetItem'],
     methods: {
-        data() {
-
-        },
-        async removeItem() {
-            const response = await axios.delete(`task-times/${this.timesheetItem.id}`)
-            this.refreshData();
+        ...mapActions(['removeTimesheet']),
+        removeItem() {
+            this.removeTimesheet(this.timesheetItem.id)
         },
         editItem() {
             console.log('edit')
