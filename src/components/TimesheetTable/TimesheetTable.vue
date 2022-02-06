@@ -5,6 +5,7 @@
             <timesheet-table-item
                 v-for="timesheetItem of getTimesheet"
                 :timesheetItem="timesheetItem"
+                @editItem="editModal"
             />
         </div>
         <div class="timesheet-footer">
@@ -25,17 +26,18 @@
             <form
                 class="modal-container"
                 autocomplete="off"
-                @submit.prevent="submitHandler"
+                @submit.prevent="formSubmit"
                 @click.stop
             >
                 <div class="modal-header">
-                    <h2>New Time Entry</h2>
+                    <h2>{{edit ? 'Update': 'New'}} Time Entry</h2>
                     <div class="action-toolbar">
-                        <button class="modal-close-button" @click="closeModal"/>
+                        <button type="button" class="modal-close-button" @click="closeModal"/>
                     </div>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
+<!--                        <dropdown v-model="project" :options="getProjects" />-->
                         <input
                             type="text"
                             placeholder="Project"
@@ -102,8 +104,11 @@
                 </div>
                 <div class="modal-footer">
                     <div class="action-toolbar">
-                        <button type="submit" class="button-primary modal-default-button">
-                            Add
+                        <button
+                            type="submit"
+                            class="button-primary modal-default-button"
+                        >
+                            {{edit ? 'Update' : 'Add'}}
                         </button>
                     </div>
                 </div>

@@ -1,0 +1,39 @@
+.main-dropdown {
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    transition: all 200ms linear;
+    position: relative;
+
+    .selected-option {
+        display: inline-block;
+        padding: 14px 16px;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        transition: all 200ms linear;
+
+        &:hover {
+            color: rgba(0,0,0,.45);
+        }
+    }
+
+    .dropdown-options-container {
+        position: absolute;
+        top: 46px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.06);
+        z-index: 1;
+    }
+
+    .dropdown-options--cell {
+        padding: 10px;
+        user-select: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
