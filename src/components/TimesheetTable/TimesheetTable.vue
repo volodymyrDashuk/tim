@@ -37,14 +37,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-<!--                        <dropdown v-model="project" :options="getProjects" />-->
-                        <input
-                            type="text"
-                            placeholder="Project"
-                            autocomplete="nope"
-                            v-model.trim="project"
-                            :class="{invalid: v$.project.$error}"
-                        >
+                        <!--<dropdown v-model="project"  />-->
+                        <div class="select-dropdown">
+                            <select
+                                type="text"
+                                placeholder="Project"
+                                autocomplete="nope"
+                                v-model.trim="project"
+                                :class="{invalid: v$.project.$error}"
+                            >
+                                <option v-for="item in getProjects" :value="item.name">{{item.name}}</option>
+                            </select>
+                        </div>
+
                         <small
                             class="helper-text error"
                             v-for="(error, index) of v$.project.$errors"
