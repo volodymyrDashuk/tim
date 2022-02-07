@@ -160,24 +160,5 @@ $transition-default: 0.25s ease-out 0.10s;
     .filter-content {
         border-left: 1px solid gray;
         padding-left: 20px;
-
-        .date {
-            display: flex;
-            flex-shrink: 0;
-            align-items: center;
-            font-weight: var.$font-weight__semibold;
-            font-size: 20px;
-            line-height: 24px;
-
-            &::before {
-                display: inline-block;
-                content: '';
-                width: 25px;
-                height: 25px;
-                position: relative;
-                background: var.$calendar-icon no-repeat;
-                margin-right: 15px;
-            }
-        }
     }
 }

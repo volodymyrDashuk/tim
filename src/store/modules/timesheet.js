@@ -1,5 +1,5 @@
 import axios from "../../axios";
-import {dateHelper} from "../../helper";
+import {minutesHoursHelper} from "../../helper";
 
 export default {
     state: {
@@ -30,7 +30,13 @@ export default {
         async editTimesheet(context, data) {
             const response = await axios.put('task-times/' + data.id, data.formData)
             this.dispatch('fetchTimesheet')
-        }
+        },
+        async fetchFilteredTimesheet(context, formData) {
+            const response = await axios.get(`task-times?date=${formData.date}&page=1`)
+            const timesheet = response.data.data
+            const totalDuration = response.data.duration_sum
+            context.commit('setTimesheet', {timesheet, totalDuration})
+        },
     },
     mutations: {
         setTimesheet(state, {timesheet, totalDuration}) {
@@ -44,9 +50,9 @@ export default {
     getters: {
         getTimesheet(state) {
             return state.timesheet.map((item) => {
-                item.start_time = dateHelper(item.start_time)
-                item.end_time = dateHelper(item.end_time)
-                item.duration = dateHelper(item.duration)
+                item.start_time = minutesHoursHelper(item.start_time)
+                item.end_time = minutesHoursHelper(item.end_time)
+                item.duration = minutesHoursHelper(item.duration)
                 return item
             })
         },

@@ -6,7 +6,12 @@
                 v-for="timesheetItem of getTimesheet"
                 :timesheetItem="timesheetItem"
                 @editItem="editModal"
+                v-if="getTimesheet.length !== 0"
             />
+            <div v-if="getTimesheet.length === 0" class="no-entries">
+                There are no notes.
+            </div>
+
         </div>
         <div class="timesheet-footer">
             <div class="total">
@@ -112,6 +117,7 @@
                         <button
                             type="submit"
                             class="button-primary modal-default-button"
+                            :disabled='!isComplete'
                         >
                             {{edit ? 'Update' : 'Add'}}
                         </button>

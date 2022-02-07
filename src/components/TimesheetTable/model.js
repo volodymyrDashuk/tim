@@ -5,7 +5,7 @@ import Dropdown from '../../components/Dropdown/Dropdown.vue'
 import useVuelidate from "@vuelidate/core";
 import {required} from "@vuelidate/validators";
 import {mapActions, mapGetters} from "vuex";
-import {dateHelper} from "../../helper";
+import {minutesHoursHelper, fullDateHelper} from "../../helper";
 
 export default {
     components: {
@@ -51,12 +51,13 @@ export default {
         async submitHandler() {
             this.v$.$touch()
             if (this.v$.$error) return
+            const date = new Date()
             await this.createTimesheet({
                 project: this.project,
                 name: this.note,
-                start_time: dateHelper(this.startTime),
-                end_time: dateHelper(this.endTime),
-                date: new Date(2011, 0, 1, 0, 0, 0, 0)
+                start_time: minutesHoursHelper(this.startTime),
+                end_time: minutesHoursHelper(this.endTime),
+                date: fullDateHelper(date)
             })
             this.closeModal()
             this.$nextTick(() => {
@@ -83,14 +84,15 @@ export default {
             this.showModal()
         },
         updateTimesheet() {
+            const date = new Date()
             this.editTimesheet({
                 id: this.id,
                 formData: {
                     project: this.project,
                     name: this.note,
-                    start_time: dateHelper(this.startTime),
-                    end_time: dateHelper(this.endTime),
-                    date: new Date(2011, 0, 1, 0, 0, 0, 0)
+                    start_time: minutesHoursHelper(this.startTime),
+                    end_time: minutesHoursHelper(this.endTime),
+                    date: fullDateHelper(date)
                 }
             })
             this.closeModal()
@@ -101,7 +103,10 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['getTimesheet', 'getTotalDuration', 'getUpdateTimesheet', 'getProjects'])
+        ...mapGetters(['getTimesheet', 'getTotalDuration', 'getUpdateTimesheet', 'getProjects']),
+        isComplete () {
+            return this.project && this.note && this.startTime && this.endTime;
+        }
     },
     mounted() {
         this.fetchTimesheet();

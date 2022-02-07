@@ -6,12 +6,14 @@
                 <button class="button button-next"></button>
             </div>
             <div class="filter-content">
-                <span class="date">January 2021</span>
-            </div>
-            <div class="filter-toolbar toggle">
-                <input type="checkbox" id="switch" class="switch"/>
-                <label for="switch" class="label-day">Day</label>
-                <label for="switch" class="label-month">Month</label>
+                <Datepicker
+                    cancelText="Close"
+                    v-model="date"
+                    :enableTimePicker="false"
+                    monthNameFormat="long"
+                    :format="dateFormat"
+                    @update:modelValue="setDate"
+                />
             </div>
         </div>
         <TimesheetTable/>

@@ -48,6 +48,7 @@ $dropdown-width: 150px;
     .dropdown-list {
         position: absolute;
         top: 0;
+        z-index: 1;
         width: 100%;
         background: var.$white-basic;
         margin-top: 5px;
