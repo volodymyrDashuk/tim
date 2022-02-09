@@ -14,6 +14,12 @@ $dropdown-width: 150px;
     width: 100%;
     margin-left: auto;
     margin-right: 15px;
+    margin-bottom: 40px;
+
+    @media (max-width: var.$mobile__x-small) {
+        margin-right: 35px;
+    }
+
 
     .dropdown-button {
         display: flex;
@@ -55,10 +61,6 @@ $dropdown-width: 150px;
         padding: 5px;
         border-radius: calc(var.$common-radius / 5);
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-    }
-
-    .dropdown-item {
-
     }
 
     .dropdown-list-link {

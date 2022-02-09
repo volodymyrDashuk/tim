@@ -3,10 +3,17 @@
         <projectItem
             v-for="projectItem in getProjects"
             :projectItem="projectItem"
+            :key="projectItem.id"
         />
     </div>
     <div class="action-toolbar">
-        <button class="button-primary" @click="showModal">Add project</button>
+        <button
+            class="button-primary"
+            @click="showModal"
+            title="Add project"
+        >
+            Add project
+        </button>
     </div>
     <Popup
         :isModalShow="isModalShow"
@@ -20,9 +27,13 @@
                 @click.stop
             >
                 <div class="modal-header">
-                    <h2>New project</h2>
+                    <h2 title="New project">New project</h2>
                     <div class="action-toolbar">
-                        <button class="modal-close-button" @click="closeModal"/>
+                        <button
+                            class="modal-close-button"
+                            @click="closeModal"
+                            title="Close"
+                        />
                     </div>
                 </div>
                 <div class="modal-body">
@@ -33,6 +44,7 @@
                             autocomplete="nope"
                             v-model.trim="projectName"
                             :class="{invalid: v$.projectName.$error}"
+                            title="Project name"
                         >
                         <small
                             class="helper-text error"
@@ -45,7 +57,11 @@
                 </div>
                 <div class="modal-footer">
                     <div class="action-toolbar">
-                        <button type="submit" class="button-primary modal-default-button">
+                        <button
+                            type="submit"
+                            class="button-primary modal-default-button"
+                            title="Add"
+                        >
                             Add
                         </button>
                     </div>

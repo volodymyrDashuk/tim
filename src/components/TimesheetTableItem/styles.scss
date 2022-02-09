@@ -6,6 +6,12 @@
 @use "src/styles/variables" as var;
 
 .timesheet-table {
+    @media (min-width: var.$tablet__small) {
+        max-height: 608px;
+        overflow-y: scroll;
+        position: relative;
+    }
+
     .table-item {
         padding: 20px;
         display: flex;
@@ -20,6 +26,10 @@
             font-size: 28px;
             font-weight: var.$font-weight__semibold;
             margin-right: 15px;
+
+            @media (max-width: var.$mobile__small) {
+                font-size: 22px;
+            }
         }
 
         .time {
@@ -30,6 +40,21 @@
 
         .notes {
             margin-bottom: 7px;
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: pre;
+
+            @media (max-width: var.$tablet__basic) {
+                max-width: 280px;
+            }
+
+            @media (max-width: var.$mobile__default) {
+                max-width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: pre;
+            }
         }
 
         .separator {
@@ -47,6 +72,14 @@
             .separator,
             .project {
                 display: block;
+            }
+
+            .notes,
+            .time,
+            .project {
+                @media (max-width: var.$mobile__small) {
+                    font-size: 13Сpx;
+                }
             }
         }
 

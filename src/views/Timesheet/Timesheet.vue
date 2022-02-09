@@ -11,7 +11,6 @@
                     v-model="date"
                     :enableTimePicker="false"
                     monthNameFormat="long"
-                    :format="dateFormat"
                     @update:modelValue="setDate"
                 />
             </div>

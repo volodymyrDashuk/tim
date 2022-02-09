@@ -4,6 +4,7 @@
         <div class="timesheet-table">
             <timesheet-table-item
                 v-for="timesheetItem of getTimesheet"
+                :key="timesheetItem.id"
                 :timesheetItem="timesheetItem"
                 @editItem="editModal"
                 v-if="getTimesheet.length !== 0"
@@ -19,7 +20,13 @@
                 <span class="total-time">{{getTotalDuration}}</span>
             </div>
             <div class="action-toolbar">
-                <button class="button-primary" @click="showModal">Add new entry</button>
+                <button
+                    class="button-primary"
+                    @click="showModal"
+                    title="Add new entry"
+                >
+                    Add new entry
+                </button>
             </div>
         </div>
     </div>
@@ -37,7 +44,12 @@
                 <div class="modal-header">
                     <h2>{{edit ? 'Update': 'New'}} Time Entry</h2>
                     <div class="action-toolbar">
-                        <button type="button" class="modal-close-button" @click="closeModal"/>
+                        <button
+                            type="button"
+                            class="modal-close-button"
+                            @click="closeModal"
+                            title="Close"
+                        />
                     </div>
                 </div>
                 <div class="modal-body">
@@ -48,10 +60,18 @@
                                 type="text"
                                 placeholder="Project"
                                 autocomplete="nope"
-                                v-model.trim="project"
+                                v-model="project"
                                 :class="{invalid: v$.project.$error}"
+                                title="Project"
                             >
-                                <option v-for="item in getProjects" :value="item.name">{{item.name}}</option>
+                                <option
+                                    v-for="item in getProjects"
+                                    :value="item.id"
+                                    :title="item.name"
+                                    :key="item.name"
+                                >
+                                    {{item.name}}
+                                </option>
                             </select>
                         </div>
 
@@ -70,6 +90,7 @@
                             autocomplete="nope"
                             v-model.trim="note"
                             :class="{invalid: v$.note.$error}"
+                            title="Note"
                         >
                         <small
                             class="helper-text error"
@@ -86,6 +107,7 @@
                             autocomplete="nope"
                             v-model.trim="startTime"
                             :class="{invalid: v$.startTime.$error}"
+                            title="Start time"
                         >
                         <small
                             class="helper-text error"
@@ -102,6 +124,7 @@
                             autocomplete="nope"
                             v-model.trim="endTime"
                             :class="{invalid: v$.endTime.$error}"
+                            title="End Time"
                         >
                         <small
                             class="helper-text error"
@@ -118,6 +141,7 @@
                             type="submit"
                             class="button-primary modal-default-button"
                             :disabled='!isComplete'
+                            :title="edit ? 'Update' : 'Add'"
                         >
                             {{edit ? 'Update' : 'Add'}}
                         </button>

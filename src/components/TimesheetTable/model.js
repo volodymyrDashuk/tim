@@ -19,7 +19,7 @@ export default {
     },
     data() {
         return {
-            project: "",
+            project: 0,
             note: "",
             startTime: "",
             endTime: "",
@@ -53,7 +53,7 @@ export default {
             if (this.v$.$error) return
             const date = new Date()
             await this.createTimesheet({
-                project: this.project,
+                project_id: this.project,
                 name: this.note,
                 start_time: minutesHoursHelper(this.startTime),
                 end_time: minutesHoursHelper(this.endTime),
@@ -88,7 +88,7 @@ export default {
             this.editTimesheet({
                 id: this.id,
                 formData: {
-                    project: this.project,
+                    project_id: this.project,
                     name: this.note,
                     start_time: minutesHoursHelper(this.startTime),
                     end_time: minutesHoursHelper(this.endTime),
@@ -100,7 +100,7 @@ export default {
                 this.v$.$reset()
             })
             this.edit = false
-        }
+        },
     },
     computed: {
         ...mapGetters(['getTimesheet', 'getTotalDuration', 'getUpdateTimesheet', 'getProjects']),

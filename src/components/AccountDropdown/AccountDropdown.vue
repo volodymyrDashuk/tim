@@ -10,13 +10,16 @@
         </button>
         <transition name="slide-fade">
             <div class="dropdown-content"
-                 v-if="showDropDown">
+                 v-if="showDropDown"
+            >
                 <ul class="dropdown-list">
                     <li class="dropdown-item">
                         <router-link
                             to="/"
                             class="dropdown-list-link logout"
-                            @click="logout">
+                            @click="logout"
+                            title="Log out"
+                        >
                             Log out
                         </router-link>
                     </li>

@@ -10,6 +10,11 @@
     background-color: white;
     width: 70%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 0 10px;
+
+    @media (max-width: var.$mobile__small) {
+        width: 100%;
+    }
 }
 
 .timesheet-footer {
@@ -32,6 +37,10 @@
         .total-time {
             font-size: 28px;
             font-weight: var.$font-weight__bold;
+
+            @media (max-width: var.$mobile__x-small) {
+                font-size: 22px;
+            }
         }
     }
 }
@@ -40,4 +49,5 @@
     padding: 20px;
     font-size: 28px;
     line-height: 32px;
+    min-height: 608px;
 }

@@ -8,6 +8,7 @@
                 <li
                     v-for="link in links"
                     class="navigation-item"
+                    :key="link.url"
                 >
                     <router-link
                         key="link.url"
@@ -16,6 +17,7 @@
                         active-class="active"
                         :to="link.url"
                         :exact="link.exact"
+                        :title="link.title"
                     >
                         <span :class=link.class></span>
                         {{ link.title }}
@@ -23,9 +25,7 @@
                 </li>
             </ul>
         </div>
-        <div class="sidebar-footer">
-            footer
-        </div>
+        <div class="sidebar-footer" />
     </aside>
 </template>
 

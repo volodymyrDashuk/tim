@@ -11,6 +11,7 @@ export default {
         async createTimesheet(context, formData) {
             await axios.post('task-times', formData)
             this.dispatch('fetchTimesheet');
+            console.log(formData)
         },
         async fetchTimesheet(context) {
             const response = await axios.get('task-times')

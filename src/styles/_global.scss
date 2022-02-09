@@ -13,6 +13,24 @@ body {
 body {
     font-family: var.$font-family__primary;
     color: var.$black-basic;
+
+    & * {
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: var.$primary-color;
+        }
+    }
 }
 
 input {
@@ -361,4 +379,31 @@ h4 {
 .main-content {
     padding: 20px 40px 20px 40px;
     width: 100%;
+
+    @media (max-width: var.$mobile__small) {
+        padding: 20px;
+    }
+}
+
+// Styles for Datepicker
+.dp__theme_light {
+    .dp__input {
+        background-color: transparent;
+        border: 1px solid var.$primary-color;
+
+        &:hover {
+            border: 1px solid darken(var.$primary-color, 15%);
+            color: var.$black-basic;
+        }
+    }
+
+    .dp__icon,
+    .dp__select {
+        color: var.$primary-color;
+    }
+
+    .dp__active_date {
+        background-color: var.$primary-color;
+        border: 1px solid var.$primary-color;
+    }
 }

@@ -22,6 +22,8 @@
         position: fixed;
         height: 100%;
         transform: translateX(-100%);
+        padding: 20px;
+        z-index: 2;
 
         &.active {
             width: 200px;
@@ -59,6 +61,12 @@
         border-bottom-left-radius: 25px;
         font-size: 16px;
 
+        @media (max-width: var.$mobile__x-small) {
+            padding: 15px;
+            border-radius: 25px;
+            margin-bottom: 15px;
+        }
+
 
         &.active {
             color: red;
@@ -79,6 +87,10 @@
                 background-color: transparent;
                 border-radius: 50%;
                 pointer-events: none;
+
+                @media (max-width: var.$mobile__x-small) {
+                    content: none;
+                }
             }
 
             &:before {

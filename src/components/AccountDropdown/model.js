@@ -17,13 +17,11 @@ export default {
     methods: {
         ...mapActions(['user']),
         async logout() {
-            const response = await axios.post(
-                'logout'
-            )
+            await axios.post('logout')
             localStorage.removeItem('token')
             localStorage.removeItem('user')
             await this.$router.push('/login')
-        },
+        }
     },
     computed: {
         ...mapGetters(['getUserName'])
