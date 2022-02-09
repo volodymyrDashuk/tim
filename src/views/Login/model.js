@@ -34,6 +34,9 @@ export default {
                 'login',
                 formData
             )
+            this.$toast.show(`Logged in successfully.`,  {
+                type: 'info'
+            });
             localStorage.setItem('token', response.data.data.token)
             localStorage.setItem('user', true)
 

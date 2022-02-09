@@ -33,12 +33,15 @@ export default {
             this.isModalShow = false
             this.projectName = ''
         },
-        submitHandler() {
+        async submitHandler() {
             this.v$.$touch()
             if (this.v$.$error) return
-            this.createProject ({
+            await this.createProject ({
                 name: this.projectName
             })
+            this.$toast.show(`Created successfully.`,  {
+                type: 'info'
+            });
             this.closeModal()
             this.$nextTick(() => {
                 this.v$.$reset()

@@ -34,6 +34,9 @@ export default {
                 'register',
                 formData
             )
+            this.$toast.show(`Registered successfully.`,  {
+                type: 'info'
+            });
             localStorage.setItem('token', response.data.data.token)
             localStorage.setItem('user', true)
             await this.$router.push('/')

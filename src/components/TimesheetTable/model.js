@@ -59,6 +59,9 @@ export default {
                 end_time: minutesHoursHelper(this.endTime),
                 date: fullDateHelper(date)
             })
+            this.$toast.show(`Created successfully.`,  {
+                type: 'info'
+            });
             this.closeModal()
             this.$nextTick(() => {
                 this.v$.$reset()
@@ -83,9 +86,9 @@ export default {
             this.endTime = this.getUpdateTimesheet.end_time
             this.showModal()
         },
-        updateTimesheet() {
+        async updateTimesheet() {
             const date = new Date()
-            this.editTimesheet({
+            await this.editTimesheet({
                 id: this.id,
                 formData: {
                     project_id: this.project,
@@ -95,6 +98,9 @@ export default {
                     date: fullDateHelper(date)
                 }
             })
+            this.$toast.show(`Updated successfully.`,  {
+                type: 'info'
+            });
             this.closeModal()
             this.$nextTick(() => {
                 this.v$.$reset()

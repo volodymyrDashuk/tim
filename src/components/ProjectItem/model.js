@@ -5,8 +5,11 @@ export default {
     props: ['projectItem'],
     methods: {
         ...mapActions(['removeProject']),
-        removeCard() {
-            this.removeProject(this.projectItem.id)
+        async removeCard() {
+            await this.removeProject(this.projectItem.id)
+            this.$toast.show(`Removed successfully.`,  {
+                type: 'info'
+            });
         }
     }
 }

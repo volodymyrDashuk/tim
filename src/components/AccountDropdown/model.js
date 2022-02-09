@@ -18,6 +18,9 @@ export default {
         ...mapActions(['user']),
         async logout() {
             await axios.post('logout')
+            this.$toast.show(`Logged out successfully.`,  {
+                type: 'info'
+            });
             localStorage.removeItem('token')
             localStorage.removeItem('user')
             await this.$router.push('/login')

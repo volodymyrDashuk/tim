@@ -4,8 +4,11 @@ export default {
     props: ['timesheetItem'],
     methods: {
         ...mapActions(['removeTimesheet', 'editTimesheet']),
-        removeItem() {
-            this.removeTimesheet(this.timesheetItem.id)
+        async removeItem() {
+            await this.removeTimesheet(this.timesheetItem.id)
+            this.$toast.show(`Removed successfully.`,  {
+                type: 'info'
+            });
         },
         editItem() {
             this.$emit('editItem', this.timesheetItem.id)

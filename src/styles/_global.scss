@@ -407,3 +407,8 @@ h4 {
         border: 1px solid var.$primary-color;
     }
 }
+
+// Styles for Toaster
+.c-toast--info {
+    background-color: darken(var.$primary-color, 10%) !important;
+}
