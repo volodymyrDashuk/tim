@@ -19,17 +19,25 @@ export default {
     methods: {
         ...mapActions(['fetchFilteredTimesheet', 'fetchTimesheet', 'fetchProjects']),
         setDate() {
-            this.formattedDate = daysMonthsYearsHelper(this.date);
-            this.fetchFilteredTimesheetItems()
+            if (this.date !== null) {
+                this.formattedDate = daysMonthsYearsHelper(this.date);
+                this.fetchFilteredTimesheetItems()
+            } else {
+                this.fetchTimesheet();
+            }
+
         },
         async fetchFilteredTimesheetItems() {
             await this.fetchFilteredTimesheet({
                 date: this.formattedDate
             })
         },
+        clearDate() {
+            // console.log('close')
+        }
     },
     mounted() {
-        this.fetchTimesheet();
+        this.setDate()
         this.fetchProjects();
     }
 }

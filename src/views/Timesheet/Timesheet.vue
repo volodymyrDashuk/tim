@@ -12,6 +12,7 @@
                     :enableTimePicker="false"
                     monthNameFormat="long"
                     @update:modelValue="setDate"
+                    @closed="clearDate"
                 />
             </div>
         </div>

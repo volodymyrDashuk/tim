@@ -115,7 +115,7 @@ export default {
         }
     },
     mounted() {
-        this.fetchTimesheet();
+        // this.fetchTimesheet();
         this.fetchProjects();
     }
 }

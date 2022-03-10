@@ -23,7 +23,6 @@
                 @click="editItem"
                 title="Edit"
             />
-
             <button
                 class="delete"
                 @click="removeItem"
