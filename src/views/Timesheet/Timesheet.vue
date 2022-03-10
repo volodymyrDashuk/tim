@@ -1,10 +1,10 @@
 <template>
     <div class="dashboard">
         <div class="filter">
-            <div class="filter-toolbar">
-                <button class="button button-prev"></button>
-                <button class="button button-next"></button>
-            </div>
+<!--            <div class="filter-toolbar">-->
+<!--                <button class="button button-prev"></button>-->
+<!--                <button class="button button-next"></button>-->
+<!--            </div>-->
             <div class="filter-content">
                 <Datepicker
                     cancelText="Close"

@@ -1,6 +1,6 @@
 <template>
     <div class="timesheet">
-        <timesheet-table-days-filter/>
+<!--        <timesheet-table-days-filter/>-->
         <div class="timesheet-table">
             <timesheet-table-item
                 v-for="timesheetItem of getTimesheet"
