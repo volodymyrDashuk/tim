@@ -16,7 +16,9 @@ export default {
     data() {
         return {
             projectName: "",
-            isModalShow: false
+            isModalShow: false,
+            edit: false,
+            id: 0
         };
     },
     validations() {
@@ -25,7 +27,7 @@ export default {
         };
     },
     methods: {
-        ...mapActions(['fetchProjects', 'createProject']),
+        ...mapActions(['fetchProjects', 'createProject', 'getProjectAction', 'editProject']),
         showModal: function () {
             this.isModalShow = true
         },
@@ -46,10 +48,42 @@ export default {
             this.$nextTick(() => {
                 this.v$.$reset()
             })
+        },
+        async editModal(id){
+            this.edit = true
+            this.id = id
+            await this.getProjectAction(id)
+
+            // ToDo: Отдельная функция.
+            this.projectName = this.getUpdateProject.name
+            this.showModal()
+        },
+        async updateProject() {
+            await this.editProject({
+                id: this.id,
+                formData: {
+                    name: this.projectName
+                }
+            })
+            this.$toast.show(`Updated successfully.`,  {
+                type: 'info'
+            });
+            this.closeModal()
+            this.$nextTick(() => {
+                this.v$.$reset()
+            })
+            this.edit = false
+        },
+        formSubmit() {
+            if (this.edit) {
+                this.updateProject()
+            } else {
+                this.submitHandler()
+            }
         }
     },
     computed: {
-        ...mapGetters(['getProjects'])
+        ...mapGetters(['getProjects', 'getUpdateProject'])
     },
     mounted() {
         this.fetchProjects()

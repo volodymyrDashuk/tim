@@ -25,7 +25,8 @@ export default {
             endTime: "",
             isModalShow: false,
             edit: false,
-            id: 0
+            id: 0,
+            date: ''
         };
     },
     validations() {
@@ -84,10 +85,10 @@ export default {
             this.note = this.getUpdateTimesheet.name
             this.startTime = this.getUpdateTimesheet.start_time
             this.endTime = this.getUpdateTimesheet.end_time
+            this.date = this.getUpdateTimesheet.date
             this.showModal()
         },
         async updateTimesheet() {
-            const date = new Date()
             await this.editTimesheet({
                 id: this.id,
                 formData: {
@@ -95,7 +96,7 @@ export default {
                     name: this.note,
                     start_time: minutesHoursHelper(this.startTime),
                     end_time: minutesHoursHelper(this.endTime),
-                    date: fullDateHelper(date)
+                    date: this.date
                 }
             })
             this.$toast.show(`Updated successfully.`,  {

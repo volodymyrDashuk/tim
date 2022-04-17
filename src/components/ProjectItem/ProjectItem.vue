@@ -6,6 +6,10 @@
             @click="removeCard"
             title="Close"
         />
+      <button
+          @click="editItem">
+        edit
+      </button>
     </div>
 </template>
 
