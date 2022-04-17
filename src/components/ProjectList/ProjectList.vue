@@ -4,6 +4,7 @@
             v-for="projectItem in getProjects"
             :projectItem="projectItem"
             :key="projectItem.id"
+            @editItem="editModal"
         />
     </div>
     <div class="action-toolbar">
@@ -23,16 +24,17 @@
             <form
                 class="modal-container"
                 autocomplete="off"
-                @submit.prevent="submitHandler"
+                @submit.prevent="formSubmit"
                 @click.stop
             >
                 <div class="modal-header">
-                    <h2 title="New project">New project</h2>
+                    <h2 title="New project">{{ edit ? 'Update project' : 'New project'}}</h2>
                     <div class="action-toolbar">
                         <button
                             class="modal-close-button"
                             @click="closeModal"
                             title="Close"
+                            type="button"
                         />
                     </div>
                 </div>
@@ -62,7 +64,7 @@
                             class="button-primary modal-default-button"
                             title="Add"
                         >
-                            Add
+                            {{ edit ? 'Update' : 'Add'}}
                         </button>
                     </div>
                 </div>

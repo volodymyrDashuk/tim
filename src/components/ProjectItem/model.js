@@ -10,6 +10,9 @@ export default {
             this.$toast.show(`Removed successfully.`,  {
                 type: 'info'
             });
+        },
+        editItem() {
+            this.$emit('editItem', this.projectItem.id)
         }
     }
 }

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: 'http://tim-api.loc/api/',
+    baseURL: 'https://tracker-time-app.pp.ua/api/',
     timeout: 100000,
     headers: {
         'Content-Type': 'application/json'
