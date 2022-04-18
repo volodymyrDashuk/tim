@@ -5,8 +5,7 @@
         >
             <span>Aloha</span>
             <span>{{getUserName}}</span>
-            <!--   ToDo: change src for img   -->
-            <img src="https://www.iconpacks.net/icons/2/free-icon-user-4249.png" alt="user">
+            <span class="dropdown-icon">&#128572;</span>
         </div>
 <!--        <transition name="slide-fade">-->
 <!--            <div class="dropdown-content"-->

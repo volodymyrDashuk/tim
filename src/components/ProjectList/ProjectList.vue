@@ -5,7 +5,11 @@
             :projectItem="projectItem"
             :key="projectItem.id"
             @editItem="editModal"
+            v-if="getProjects.length !== 0"
         />
+        <div v-if="getProjects.length === 0" class="no-project">
+            Add your first project &#128526;
+        </div>
     </div>
     <div class="action-toolbar">
         <button

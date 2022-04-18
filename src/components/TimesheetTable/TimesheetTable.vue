@@ -10,7 +10,7 @@
                 v-if="getTimesheet.length !== 0"
             />
             <div v-if="getTimesheet.length === 0" class="no-entries">
-                There are no notes.
+                Add your first time log &#128640;
             </div>
         </div>
         <div class="timesheet-footer">
