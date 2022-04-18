@@ -5,22 +5,17 @@ export default {
     state: {
         timesheet: [],
         totalDuration: "",
-        updateTimesheet: {}
+        updateTimesheet: {},
+        filterDate: ''
     },
     actions: {
         async createTimesheet(context, formData) {
             await axios.post('task-times', formData)
-            this.dispatch('fetchTimesheet');
-        },
-        async fetchTimesheet(context) {
-            const response = await axios.get('task-times')
-            const timesheet = response.data.data
-            const totalDuration = response.data.duration_sum
-            context.commit('setTimesheet', {timesheet, totalDuration})
+            this.dispatch('fetchFilteredTimesheet')
         },
         async removeTimesheet(context, item) {
             const response = await axios.delete('task-times/' + item)
-            this.dispatch('fetchTimesheet')
+            this.dispatch('fetchFilteredTimesheet')
         },
         async getTimesheetAction(context, id) {
             const response = await axios.get('task-times/' + id)
@@ -29,10 +24,10 @@ export default {
         },
         async editTimesheet(context, data) {
             const response = await axios.put('task-times/' + data.id, data.formData)
-            this.dispatch('fetchTimesheet')
+            this.dispatch('fetchFilteredTimesheet')
         },
-        async fetchFilteredTimesheet(context, formData) {
-            const response = await axios.get(`task-times?date=${formData.date}&page=1`)
+        async fetchFilteredTimesheet(context) {
+            const response = await axios.get(`task-times?date=${context.state.filterDate}&page=1`)
             const timesheet = response.data.data
             const totalDuration = response.data.duration_sum
             context.commit('setTimesheet', {timesheet, totalDuration})
@@ -45,6 +40,9 @@ export default {
         },
         setUpdatedTimesheet(state, item) {
             state.updateTimesheet = item
+        },
+        setFilterDate(state, data) {
+            state.filterDate = data
         }
     },
     getters: {

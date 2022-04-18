@@ -40,21 +40,6 @@
 
         .notes {
             margin-bottom: 7px;
-            max-width: 400px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: pre;
-
-            @media (max-width: var.$tablet__basic) {
-                max-width: 280px;
-            }
-
-            @media (max-width: var.$mobile__default) {
-                max-width: 100px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: pre;
-            }
         }
 
         .separator {

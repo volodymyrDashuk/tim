@@ -1,7 +1,7 @@
 <template>
     <div class="card" :title="projectItem.name">
         <div class="card-logo"
-             :style="{'background-color': addBackgroundColor}"
+             :style="{'background-color': addBackgroundColor()}"
         >
             <span>{{projectItem.name.charAt(0)}}</span>
         </div>
@@ -13,6 +13,7 @@
         />
       <button
           class="button-icon button-edit"
+          title="Edit"
           @click="editItem" />
     </div>
 </template>
