@@ -6,10 +6,12 @@ Tim uses a number of open source projects to work properly:
 
 - [Vue.js](https://vuejs.org) - is a JavaScript framework for building user interfaces.
 - [Vuex](https://vuex.vuejs.org) - is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+- [Laravel](https://laravel.com) -  is a free and open-source PHP framework that provides a set of tools and resources to build modern PHP applications.
 - [Vuelidate](https://vuelidate.js.org) - is data-model oriented, meaning validation rules are added to a validations object in the component definition, rather than being added directly to input elements in the DOM.
 - [Moment.js](https://momentjs.com) - is a JavaScript library which helps is parsing, validating, manipulating and displaying date/time in JavaScript in a very easy way.
 - [@meforma/vue-toaster](https://github.com/MeForma/vue-toaster) - notification plugin for vue 3.
-- [Laravel](https://laravel.com) -  is a free and open-source PHP framework that provides a set of tools and resources to build modern PHP applications.
+- [Vue 3 Datepicker](https://vue3datepicker.com/) - Vue 3 date time picker library.
+
 
 And of course Tim itself is open source with a [public repository](https://github.com/volodymyrDashuk/tim) on GitHub.
 
