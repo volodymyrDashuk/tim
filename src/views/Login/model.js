@@ -1,7 +1,7 @@
 import Burger from "../../components/Burger/Burger";
 import useVuelidate from '@vuelidate/core'
 import {required, email, minLength} from '@vuelidate/validators'
-import axios from '../../axios'
+import {mapActions} from "vuex";
 
 export default {
     components: {Burger},
@@ -22,24 +22,17 @@ export default {
         };
     },
     methods: {
+        ...mapActions(['login']),
         async submitHandler() {
             this.v$.$touch();
             if (this.v$.$error) return
-            const formData = {
+            await this.login ({
                 email: this.email,
                 password: this.password
-            }
-
-            const response = await axios.post(
-                'login',
-                formData
-            )
+            })
             this.$toast.show(`Logged in successfully.`,  {
                 type: 'info'
             });
-            localStorage.setItem('token', response.data.data.token)
-            localStorage.setItem('user', true)
-
             await this.$router.push('/');
         },
     }

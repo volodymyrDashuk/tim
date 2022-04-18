@@ -17,7 +17,7 @@
                         <router-link
                             to="/"
                             class="dropdown-list-link logout"
-                            @click="logout"
+                            @click="accountLogout"
                             title="Log out"
                         >
                             Log out

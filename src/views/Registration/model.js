@@ -1,6 +1,6 @@
 import useVuelidate from '@vuelidate/core'
 import {required, email, minLength} from '@vuelidate/validators'
-import axios from '../../axios'
+import {mapActions} from "vuex";
 
 export default {
     name: 'registration',
@@ -22,24 +22,19 @@ export default {
         };
     },
     methods: {
+        ...mapActions(['registration']),
         async submitHandler() {
             this.v$.$touch();
             if (this.v$.$error) return
-            const formData = {
+            await this.registration({
                 name: this.name,
                 email: this.email,
                 password: this.password
-            }
-            const response = await axios.post(
-                'register',
-                formData
-            )
+            })
             this.$toast.show(`Registered successfully.`,  {
                 type: 'info'
-            });
-            localStorage.setItem('token', response.data.data.token)
-            localStorage.setItem('user', true)
+            })
             await this.$router.push('/')
-        },
+        }
     }
 }

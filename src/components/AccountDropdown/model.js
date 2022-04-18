@@ -1,4 +1,3 @@
-import axios from "../../axios";
 import {mapActions, mapGetters} from "vuex";
 
 export default {
@@ -15,14 +14,12 @@ export default {
         };
     },
     methods: {
-        ...mapActions(['user']),
-        async logout() {
-            await axios.post('logout')
+        ...mapActions(['user', 'logout']),
+        async accountLogout() {
+            await this.logout()
             this.$toast.show(`Logged out successfully.`,  {
                 type: 'info'
             });
-            localStorage.removeItem('token')
-            localStorage.removeItem('user')
             await this.$router.push('/login')
         }
     },
