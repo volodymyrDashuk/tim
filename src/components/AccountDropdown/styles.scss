@@ -15,6 +15,7 @@ $dropdown-width: 200px;
 
     .dropdown-button {
         display: flex;
+        justify-content: flex-end;
         align-items: center;
         border: none;
         background: none;
@@ -22,6 +23,10 @@ $dropdown-width: 200px;
 
         span {
             margin-right: 10px;
+
+            &:first-of-type {
+                font-weight: 600;
+            }
         }
 
         img {
@@ -29,18 +34,18 @@ $dropdown-width: 200px;
             height: 30px;
         }
 
-        &:after {
-            display: inline-block;
-            content: '';
-            width: 15px;
-            height: 15px;
-            position: relative;
-            background: var.$arrow-bottom-icon no-repeat;
-            margin-left: 15px;
-        }
+        //&:after {
+        //    display: inline-block;
+        //    content: '';
+        //    width: 15px;
+        //    height: 15px;
+        //    position: relative;
+        //    background: var.$arrow-bottom-icon no-repeat;
+        //    margin-left: 15px;
+        //}
 
         @media (max-width: var.$mobile__x-small) {
-            margin-left: 0;
+            justify-content: flex-start;
 
             span {
                 display: none;

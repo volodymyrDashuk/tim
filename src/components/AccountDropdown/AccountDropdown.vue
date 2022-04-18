@@ -1,31 +1,24 @@
 <template>
     <div class="dropdown">
-        <button class="dropdown-button"
+        <div class="dropdown-button"
                 v-on:click.prevent="showDropDown=!showDropDown"
         >
             <span>Aloha</span>
             <span>{{getUserName}}</span>
             <!--   ToDo: change src for img   -->
             <img src="https://www.iconpacks.net/icons/2/free-icon-user-4249.png" alt="user">
-        </button>
-        <transition name="slide-fade">
-            <div class="dropdown-content"
-                 v-if="showDropDown"
-            >
-                <ul class="dropdown-list">
-                    <li class="dropdown-item">
-                        <router-link
-                            to="/"
-                            class="dropdown-list-link logout"
-                            @click="accountLogout"
-                            title="Log out"
-                        >
-                            Log out
-                        </router-link>
-                    </li>
-                </ul>
-            </div>
-        </transition>
+        </div>
+<!--        <transition name="slide-fade">-->
+<!--            <div class="dropdown-content"-->
+<!--                 v-if="showDropDown"-->
+<!--            >-->
+<!--                <ul class="dropdown-list">-->
+<!--                    <li class="dropdown-item">-->
+<!---->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </transition>-->
     </div>
 </template>
 

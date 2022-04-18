@@ -1,3 +1,5 @@
+import {mapActions} from "vuex";
+
 export default {
     props: ['isOpen'],
     data: () => ({
@@ -9,8 +11,13 @@ export default {
         ]
     }),
     methods: {
-        async logout() {
-            this.$router.push('/login?message=logout')
+        ...mapActions(['logout']),
+        async accountLogout() {
+            await this.logout()
+            this.$toast.show(`Logged out successfully.`,  {
+                type: 'info'
+            });
+            await this.$router.push('/login')
         }
     }
 }

@@ -25,7 +25,17 @@
                 </li>
             </ul>
         </div>
-        <div class="sidebar-footer" />
+        <div class="sidebar-footer">
+            <router-link
+                to="/"
+                class="logout-link"
+                @click="accountLogout"
+                title="Log out"
+            >
+                <span class="logout-icon"></span>
+                Log out
+            </router-link>
+        </div>
     </aside>
 </template>
 

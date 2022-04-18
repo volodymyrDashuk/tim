@@ -6,9 +6,11 @@
 @use "src/styles/variables" as var;
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
     background: var.$primary-color;
     width: 220px;
-    padding: 20px 0 20px 15px;
+    padding: 20px 0 45px 15px;
     flex-shrink: 0;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -48,6 +50,38 @@
         padding-top: 40px;
     }
 
+    .sidebar-footer {
+        margin-top: auto;
+
+        .logout-link {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: var.$white-basic;
+            padding-left: 15px;
+
+            @media (max-width: var.$tablet__small) {
+                font-size: 0;
+            }
+        }
+
+        .logout-icon {
+            line-height: 0;
+            padding-right: 10px;
+
+            &::after {
+                display: inline-block;
+                content: '';
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: 0;
+                right: 0;
+                background: var.$logout-icon-white no-repeat;
+            }
+        }
+    }
+
     .navigation-item {
         position: relative;
     }
@@ -60,6 +94,10 @@
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
         font-size: 16px;
+
+        @media (max-width: var.$tablet__small) {
+            font-size: 0;
+        }
 
         @media (max-width: var.$mobile__x-small) {
             padding: 15px;

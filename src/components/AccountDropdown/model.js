@@ -4,24 +4,11 @@ export default {
     name: 'AccountDropdown',
     data() {
         return {
-            showDropDown: false,
-            links: [
-                {
-                    name: "Logout",
-                    class: "logout"
-                }
-            ]
+            showDropDown: false
         };
     },
     methods: {
-        ...mapActions(['user', 'logout']),
-        async accountLogout() {
-            await this.logout()
-            this.$toast.show(`Logged out successfully.`,  {
-                type: 'info'
-            });
-            await this.$router.push('/login')
-        }
+        ...mapActions(['user'])
     },
     computed: {
         ...mapGetters(['getUserName'])
