@@ -7,25 +7,18 @@
 
 //  Local variables for toggle
 
-$dropdown-width: 150px;
+$dropdown-width: 200px;
 
 .dropdown {
-    max-width: $dropdown-width;
     width: 100%;
-    margin-left: auto;
-    margin-right: 40px;
     margin-bottom: 40px;
-
-    @media (max-width: var.$mobile__x-small) {
-        margin-right: 35px;
-    }
-
 
     .dropdown-button {
         display: flex;
         align-items: center;
         border: none;
         background: none;
+        margin-left: auto;
 
         span {
             margin-right: 10px;
@@ -45,6 +38,18 @@ $dropdown-width: 150px;
             background: var.$arrow-bottom-icon no-repeat;
             margin-left: 15px;
         }
+
+        @media (max-width: var.$mobile__x-small) {
+            margin-left: 0;
+
+            span {
+                display: none;
+            }
+
+            &:after {
+                content: none;
+            }
+        }
     }
 
     .dropdown-content {
@@ -52,6 +57,7 @@ $dropdown-width: 150px;
     }
 
     .dropdown-list {
+        max-width: $dropdown-width;
         position: absolute;
         top: 0;
         z-index: 1;
@@ -61,6 +67,10 @@ $dropdown-width: 150px;
         padding: 5px;
         border-radius: calc(var.$common-radius / 5);
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+
+        @media (min-width: var.$mobile__x-small) {
+            right: 0;
+        }
     }
 
     .dropdown-list-link {

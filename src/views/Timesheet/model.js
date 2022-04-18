@@ -25,7 +25,6 @@ export default {
             } else {
                 this.fetchTimesheet();
             }
-
         },
         async fetchFilteredTimesheetItems() {
             await this.fetchFilteredTimesheet({

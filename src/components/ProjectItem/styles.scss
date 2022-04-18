@@ -6,7 +6,7 @@
 @use "src/styles/variables" as var;
 
 .card {
-    width: clamp(200px, 50%, 300px);
+    width: clamp(190px, 47%, 300px);
     min-height: 150px;
     border-radius: var.$common-radius;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
@@ -14,15 +14,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: relative;
     background: var.$white-basic;
     font-size: 18px;
 
-    .button-close {
+    @media (max-width: var.$mobile__x-small) {
+        text-align: center;
+        width: clamp(155px, 45%, 300px);
+    }
+
+    .card-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        background-color: #b3d4fc;
+    }
+
+    .button-icon {
         border: none;
         background: none;
         position: absolute;
-        right: 15px;
         top: 10px;
 
         &::after {
@@ -33,7 +49,25 @@
             position: relative;
             top: 0;
             right: 0;
-            background: var.$close-icon no-repeat;
+
+        }
+
+        &.button-close {
+            right: 15px;
+
+            &::after {
+                background: var.$close-icon no-repeat;
+            }
+        }
+
+        &.button-edit {
+            left: 15px;
+
+            &::after {
+                width: 15px;
+                height: 15px;
+                background: var.$edit-icon-full-bg no-repeat;
+            }
         }
     }
 }

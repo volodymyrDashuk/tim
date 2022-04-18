@@ -2,7 +2,7 @@
     <div class="inner">
         <burger v-on:click="isOpen = !isOpen"/>
         <sidebar :isOpen="isOpen"/>
-        <main class="main-content">
+        <main class="main-content" v-on:click="isOpen = false">
             <account-dropdown/>
             <router-view/>
         </main>
