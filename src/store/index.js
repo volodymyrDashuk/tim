@@ -5,6 +5,8 @@ import currentUser from './modules/currentUser'
 import login from './modules/login'
 import registration from './modules/registration'
 import logout from './modules/logout'
+import forgotPassword from './modules/forgotPassword'
+import resetPassword from './modules/resetPassword'
 
 export default createStore({
     modules: {
@@ -13,6 +15,8 @@ export default createStore({
         currentUser,
         login,
         registration,
-        logout
+        logout,
+        forgotPassword,
+        resetPassword
     }
 })

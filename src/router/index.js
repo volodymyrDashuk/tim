@@ -20,6 +20,12 @@ const routes = [
         component: () => import('../views/ForgotPassword/ForgotPassword.vue')
     },
     {
+        path: '/reset-password',
+        name: 'resetPassword',
+        meta: {layout: 'Auth', isAuth: false, title: 'Tim - Reset Password'},
+        component: () => import('../views/ResetPassword/ResetPassword.vue')
+    },
+    {
         path: '/',
         name: 'Dashboard',
         meta: {layout: 'Main', isAuth: true, title: 'Tim - Dashboard'},

@@ -3,7 +3,7 @@
         <div class="dropdown-button"
                 v-on:click.prevent="showDropDown=!showDropDown"
         >
-            <span>Aloha</span>
+            <span>Hey</span>
             <span>{{getUserName}}</span>
             <span class="dropdown-icon">&#128572;</span>
         </div>

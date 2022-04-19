@@ -11,6 +11,7 @@ Tim uses a number of open source projects to work properly:
 - [Moment.js](https://momentjs.com) - is a JavaScript library which helps is parsing, validating, manipulating and displaying date/time in JavaScript in a very easy way.
 - [@meforma/vue-toaster](https://github.com/MeForma/vue-toaster) - notification plugin for vue 3.
 - [Vue 3 Datepicker](https://vue3datepicker.com/) - Vue 3 date time picker library.
+- [vue-disable-autocomplete](https://www.npmjs.com/package/vue-disable-autocomplete) - This plugin solves the problem that chrome (or any other browser) doesn't support the autocomplete attribute anymore.
 
 
 And of course Tim itself is open source with a [public repository](https://github.com/volodymyrDashuk/tim) on GitHub.
@@ -42,10 +43,12 @@ The following figure is the map of this sample project.
     - views                         … Define views (all entry points for applications’ routes) of this project.
         - Activity                  … Activity page.
         - Dashboard                 … Dashboard page.
+        - ForgotPassword            … Forgot password page. When email is entered, it sends a link to reset the password to the email. 
         - Login                     … Login page.
         - NoRoute                   … NoRoute (404) page.
         - Project                   … Project page.
         - Registration              … Registration page.
+        - ResetPassword             … Reset password page.
         - Timesheet                 … Timesheet page.
     - styles                        … Contains global styles.
         - _fonts.scss               … Contains importing fonts and basic styles for them. 
