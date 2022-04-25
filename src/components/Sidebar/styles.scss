@@ -45,6 +45,10 @@
         .logo-letter {
             font-size: 40px;
             color: var.$white-basic;
+
+            @media (max-width: var.$tablet__small) {
+                font-size: 22px;
+            }
         }
 
         .logo-ico {
@@ -93,6 +97,10 @@
             @media (max-width: var.$tablet__small) {
                 font-size: 0;
             }
+
+            @media (max-width: var.$mobile__x-small) {
+                font-size: 16px;
+            }
         }
 
         .logout-icon {
@@ -130,6 +138,7 @@
         }
 
         @media (max-width: var.$mobile__x-small) {
+            font-size: 16px;
             padding: 15px;
             border-radius: 25px;
             margin-bottom: 15px;
