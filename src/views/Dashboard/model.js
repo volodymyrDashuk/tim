@@ -1,7 +1,7 @@
-import ProjectList from "../../components/ProjectList/ProjectList";
+import TimeReportList from "@/components/TimeReportList/TimeReportList"
 
 export default {
     components: {
-        ProjectList
+        TimeReportList
     }
 }

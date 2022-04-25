@@ -33,6 +33,8 @@ The following figure is the map of this sample project.
         - ProjectItem               … Contains the logic, markup and styles of the project card.
         - ProjectList               … Contains the logic, markup and styles of the project list.
         - Sidebar                   … Contains the logic, markup and styles of the sidebar (navigation).
+        - TimeReportItem            … Contains the logic, markup and styles of the time report item.
+        - TimeReportList            … Contains the logic, markup and styles of the time report list section.
         - TimesheetTable            … Contains the logic, markup and styles of the timesheet list.
         - TimesheetTableDaysFilter  … Contains the logic, markup and styles of the filtration by day in the timesheet table. 
         - TimesheetTableItem        … Contains the logic, markup and styles for every entry in the timesheet.

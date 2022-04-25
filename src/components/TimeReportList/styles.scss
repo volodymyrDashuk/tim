@@ -1,0 +1,92 @@
+/**
+* @author Volodymyr Dashuk
+* @copyright Copyright (c) 2021 Volodymyr Dashuk
+*/
+
+@use "src/styles/variables" as var;
+
+.time-report {
+    margin-bottom: 50px;
+
+    @media (max-width: var.$mobile__x-small) {
+        margin-bottom: 30px;
+    }
+
+    .time-title {
+        margin-bottom: 20px;
+    }
+
+    .time-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+
+        @media (max-width: var.$desktop__wxga-display) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: var.$tablet__small) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: var.$mobile__x-small) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .time-card {
+        border-radius: var.$common-radius;
+        position: relative;
+
+        span {
+            display: block;
+        }
+
+        .month {
+            font-size: 14px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var.$gray1;
+        }
+
+        .total {
+            font-size: 43px;
+            color: var.$primary-color;
+
+            @media (max-width: var.$mobile__default) {
+                font-size: 28px;
+            }
+
+            @media (max-width: var.$mobile__small) {
+                font-size: 22px;
+            }
+        }
+
+        .up-icon,
+        .down-icon {
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                content: '';
+                width: 15px;
+                height: 15px;
+                vertical-align: middle;
+            }
+        }
+
+        .up-icon {
+            &:after {
+                background: var.$up-icon no-repeat;
+            }
+        }
+
+        .down-icon {
+            &:after {
+                background: var.$down-icon no-repeat;
+            }
+        }
+    }
+}
