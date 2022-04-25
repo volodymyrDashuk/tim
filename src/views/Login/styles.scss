@@ -99,6 +99,7 @@
 
         h3 {
             margin-bottom: 40px;
+            font-weight: normal;
 
             @media (max-width: var.$mobile__default) {
                 color: var.$white-basic;
@@ -106,11 +107,8 @@
         }
 
         .action-toolbar {
-            text-align: center;
-
             a {
                 max-width: none;
-
             }
         }
 
