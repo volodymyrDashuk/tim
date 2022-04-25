@@ -1,7 +1,11 @@
 <template>
     <aside class="sidebar" :class="{active: isOpen}">
         <div class="sidebar-logo">
-            <span class="logo"/>
+            <div class="logo">
+                <span class="logo-letter">T</span>
+                <div class="logo-ico"></div>
+                <span class="logo-letter">M</span>
+            </div>
         </div>
         <div class="sidebar-content">
             <ul class="navigation-list">

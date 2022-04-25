@@ -18,19 +18,11 @@
 
     .time-content {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-column-gap: 40px;
         grid-row-gap: 40px;
 
-        @media (max-width: var.$desktop__wxga-display) {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        @media (max-width: var.$tablet__small) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media (max-width: var.$mobile__x-small) {
+        @media (max-width: var.$tablet__basic) {
             grid-template-columns: repeat(2, 1fr);
         }
     }

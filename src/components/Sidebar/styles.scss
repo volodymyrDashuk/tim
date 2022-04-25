@@ -33,16 +33,46 @@
         }
     }
 
+    .sidebar-logo {
+        margin-left: -15px;
+    }
+
     .logo {
-        &::after {
-            display: inline-block;
-            content: '';
-            width: 60px;
-            height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo-letter {
+            font-size: 40px;
+            color: var.$white-basic;
+        }
+
+        .logo-ico {
+            margin: 0 7px;
+            border: 1px solid var.$white-basic;
+            border-radius: 25px;
+            width: 18px;
+            height: 33px;
             position: relative;
-            top: 0;
-            right: 0;
-            background: var.$logo-secondary no-repeat;
+            padding: 2px;
+
+            &:before {
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                content: "";
+                display: block;
+                width: 12px;
+                height: 12px;
+                margin: 0 auto;
+                border-radius: 100%;
+                background-color: var.$white-basic;
+                transition: all .3s ease-out;
+            }
+
+            &:hover:before {
+                top: calc(100% - 12px - 2px);
+            }
         }
     }
 
