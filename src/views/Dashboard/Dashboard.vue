@@ -33,17 +33,14 @@
         <div class="productivity-content">
             <div class="productivity-card">
                 <span class="title">Yesterday</span>
-                <span class="analytics up">+2.4%</span>
                 <span class="total">12 Task</span>
             </div>
             <div class="productivity-card">
                 <span class="title">This week</span>
-                <span class="analytics up">+4.5%</span>
                 <span class="total">32 Task</span>
             </div>
             <div class="productivity-card">
                 <span class="title">This month</span>
-                <span class="analytics down">-6.1%</span>
                 <span class="total">44 Task</span>
             </div>
         </div>

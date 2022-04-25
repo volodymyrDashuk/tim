@@ -16,6 +16,7 @@ export default {
     data() {
         return {
             projectName: "",
+            projectColor: "",
             isModalShow: false,
             edit: false,
             id: 0
@@ -23,7 +24,8 @@ export default {
     },
     validations() {
         return {
-            projectName: {required}
+            projectName: {required},
+            projectColor: {required}
         };
     },
     methods: {
@@ -34,12 +36,14 @@ export default {
         closeModal() {
             this.isModalShow = false
             this.projectName = ''
+            this.color = ''
         },
         async submitHandler() {
             this.v$.$touch()
             if (this.v$.$error) return
             await this.createProject ({
-                name: this.projectName
+                name: this.projectName,
+                color: this.projectColor
             })
             this.$toast.show(`Created successfully.`,  {
                 type: 'info'
@@ -56,13 +60,15 @@ export default {
 
             // ToDo: Отдельная функция.
             this.projectName = this.getUpdateProject.name
+            this.projectColor = this.getUpdateProject.color
             this.showModal()
         },
         async updateProject() {
             await this.editProject({
                 id: this.id,
                 formData: {
-                    name: this.projectName
+                    name: this.projectName,
+                    color: this.projectColor
                 }
             })
             this.$toast.show(`Updated successfully.`,  {

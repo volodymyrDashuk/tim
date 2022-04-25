@@ -1,7 +1,7 @@
 <template>
     <div class="card" :title="projectItem.name">
         <div class="card-logo"
-             :style="{'background-color': addBackgroundColor()}"
+             :style="{'background-color': projectItem.color}"
         >
             <span>{{projectItem.name.charAt(0)}}</span>
         </div>

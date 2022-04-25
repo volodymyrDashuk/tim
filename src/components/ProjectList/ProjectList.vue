@@ -60,6 +60,24 @@
                             {{ error.$message }}
                         </small>
                     </div>
+                    <div class="form-group form-group-color">
+                        <span>Chose project color</span>
+                        <input
+                            type="color"
+                            placeholder="Project name"
+                            autocomplete="nope"
+                            v-model.trim="projectColor"
+                            :class="['color', {invalid: v$.projectColor.$error}]"
+                            title="Project color"
+                        >
+                        <small
+                            class="helper-text error"
+                            v-for="(error, index) of v$.projectColor.$errors"
+                            :key="index"
+                        >
+                            {{ error.$message }}
+                        </small>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="action-toolbar">

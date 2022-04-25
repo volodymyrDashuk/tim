@@ -64,6 +64,19 @@
 
 .modal-body {
     margin: 20px 0;
+
+    .form-group-color {
+        display: flex;
+        align-items: center;
+
+        .color {
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border: none;
+            margin-left: 10px;
+        }
+    }
 }
 
 .modal-default-button {

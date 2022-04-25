@@ -166,27 +166,6 @@
             }
         }
 
-        .analytics {
-            position: absolute;
-            right: 28px;
-            top: 23px;
-            font-weight: var.$font-weight__bold;
-            font-size: 12px;
-            line-height: 20px;
-
-            @media (max-width: var.$mobile__default) {
-                right: 15px;
-            }
-
-            &.up {
-                color: var.$green;
-            }
-
-            &.down {
-                color: var.$red;
-            }
-        }
-
         .total {
             font-weight: var.$font-weight__bold;
             font-size: 34px;
