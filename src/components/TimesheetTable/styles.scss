@@ -12,7 +12,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     padding: 0 10px;
 
-    @media (max-width: var.$mobile__small) {
+    @media (max-width: var.$tablet__small) {
         width: 100%;
     }
 }

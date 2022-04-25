@@ -24,7 +24,7 @@
         position: fixed;
         height: 100%;
         transform: translateX(-100%);
-        padding: 20px;
+        padding: 20px 10px;
         z-index: 2;
 
         &.active {
@@ -142,11 +142,6 @@
             padding: 15px;
             border-radius: 25px;
             margin-bottom: 15px;
-        }
-
-
-        &.active {
-            color: red;
         }
 
         &:hover,
