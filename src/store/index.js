@@ -8,6 +8,7 @@ import logout from './modules/logout'
 import forgotPassword from './modules/forgotPassword'
 import resetPassword from './modules/resetPassword'
 import timeReport from "@/store/modules/timeReport";
+import taskReport from "@/store/modules/taskReport";
 
 export default createStore({
     modules: {
@@ -19,6 +20,7 @@ export default createStore({
         logout,
         forgotPassword,
         resetPassword,
-        timeReport
+        timeReport,
+        taskReport
     }
 })
