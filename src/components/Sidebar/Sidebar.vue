@@ -22,6 +22,7 @@
                         :to="link.url"
                         :exact="link.exact"
                         :title="link.title"
+                        @click="closeNavigation"
                     >
                         <span :class=link.class></span>
                         {{ link.title }}

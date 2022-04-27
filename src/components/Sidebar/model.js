@@ -18,6 +18,9 @@ export default {
                 type: 'info'
             });
             await this.$router.push('/login')
+        },
+        closeNavigation() {
+            this.$emit('closeSidebar')
         }
     }
 }

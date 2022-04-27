@@ -1,7 +1,7 @@
 <template>
     <div class="inner">
         <burger v-on:click="isOpen = !isOpen"/>
-        <sidebar :isOpen="isOpen"/>
+        <sidebar :isOpen="isOpen" @closeSidebar="closeModal"/>
         <main class="main-content" v-on:click="isOpen = false">
             <account-dropdown/>
             <router-view/>
@@ -22,6 +22,11 @@ export default {
     },
     data: () => ({
         isOpen: false
-    })
+    }),
+    methods: {
+        closeModal() {
+            this.isOpen = false;
+        }
+    }
 }
 </script>
