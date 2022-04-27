@@ -17,7 +17,7 @@
                     <input
                         type="text"
                         placeholder="Name"
-                        autocomplete="nope"
+                        autocomplete="off"
                         v-model.trim="name"
                         :class="{invalid: v$.name.$error}"
                     >
@@ -33,7 +33,7 @@
                     <input
                         type="text"
                         placeholder="Email Address"
-                        autocomplete="nope"
+                        autocomplete="off"
                         v-model.trim="email"
                         :class="{invalid: v$.email.$error}"
                     >
@@ -49,7 +49,7 @@
                     <input
                         type="password"
                         placeholder="Password"
-                        autocomplete="nope"
+                        autocomplete="off"
                         v-model.trim="password"
                         :class="{invalid: v$.password.$error}"
                     >

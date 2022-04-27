@@ -85,7 +85,7 @@
                         <input
                             type="text"
                             placeholder="Note"
-                            autocomplete="nope"
+                            autocomplete="off"
                             v-model.trim="note"
                             :class="{invalid: v$.note.$error}"
                             title="Note"
@@ -111,7 +111,7 @@
                         <input
                             type="time"
                             placeholder="Start time"
-                            autocomplete="nope"
+                            autocomplete="off"
                             v-model.trim="startTime"
                             :class="{invalid: v$.startTime.$error}"
                             title="Start time"
@@ -128,7 +128,7 @@
                         <input
                             type="time"
                             placeholder="End Time"
-                            autocomplete="nope"
+                            autocomplete="off"
                             v-model.trim="endTime"
                             :class="{invalid: v$.endTime.$error}"
                             title="End Time"

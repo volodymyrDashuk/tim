@@ -21,6 +21,7 @@
                     <input
                         type="text"
                         placeholder="Email Address"
+                        autocomplete="off"
                         v-model.trim="email"
                         :class="{invalid: v$.email.$error}"
                     >
