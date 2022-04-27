@@ -58,7 +58,6 @@
                             <select
                                 type="text"
                                 placeholder="Project"
-                                autocomplete="nope"
                                 v-model="project"
                                 :class="{invalid: v$.project.$error}"
                                 title="Project"
@@ -98,6 +97,15 @@
                         >
                             {{ error.$message }}
                         </small>
+                    </div>
+                    <div class="form-group" v-if="edit">
+                        <Datepicker
+                            cancelText="Close"
+                            v-model="editDate"
+                            :autoPosition="false"
+                            :enableTimePicker="false"
+                            monthNameFormat="long"
+                        />
                     </div>
                     <div class="form-group">
                         <input

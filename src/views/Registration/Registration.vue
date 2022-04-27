@@ -62,7 +62,11 @@
                     </small>
                 </div>
                 <div class="action-toolbar">
-                    <button type="submit" class="button-primary">Register</button>
+                    <button
+                        type="submit"
+                        class="button-primary"
+                        :disabled='!isComplete'
+                    >Register</button>
                 </div>
                 <div class="action-toolbar">
                     <span>Have an account? Just</span>

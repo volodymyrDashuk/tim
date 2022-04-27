@@ -36,5 +36,10 @@ export default {
             })
             await this.$router.push('/')
         }
+    },
+    computed: {
+        isComplete () {
+            return this.name && this.email && this.password;
+        }
     }
 }

@@ -48,7 +48,8 @@
                 <div class="action-toolbar">
                     <button
                         type="submit"
-                        class="button-primary">
+                        class="button-primary"
+                        :disabled='!isComplete'>
                         Login
                     </button>
                 </div>
