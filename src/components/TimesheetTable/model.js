@@ -100,7 +100,7 @@ export default {
                     name: this.note,
                     start_time: minutesHoursHelper(this.startTime),
                     end_time: minutesHoursHelper(this.endTime),
-                    date: fullDateHelper(this.editDate)
+                    date: this.editDate
                 }
             })
             this.$toast.show(`Updated successfully.`,  {

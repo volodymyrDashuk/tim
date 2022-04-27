@@ -31,7 +31,7 @@ export default {
             const timesheet = response.data.data
             const totalDuration = response.data.duration_sum
             context.commit('setTimesheet', {timesheet, totalDuration})
-        },
+        }
     },
     mutations: {
         setTimesheet(state, {timesheet, totalDuration}) {
