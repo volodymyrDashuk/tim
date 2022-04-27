@@ -10,27 +10,47 @@ export default {
     },
     actions: {
         async createTimesheet(context, formData) {
-            await axios.post('task-times', formData)
-            this.dispatch('fetchFilteredTimesheet')
+            try {
+                await axios.post('task-times', formData)
+                this.dispatch('fetchFilteredTimesheet')
+            } catch (e) {
+                console.log(e)
+            }
         },
         async removeTimesheet(context, item) {
-            const response = await axios.delete('task-times/' + item)
-            this.dispatch('fetchFilteredTimesheet')
+            try {
+                const response = await axios.delete('task-times/' + item)
+                this.dispatch('fetchFilteredTimesheet')
+            } catch (e) {
+                console.log(e)
+            }
         },
         async getTimesheetAction(context, id) {
-            const response = await axios.get('task-times/' + id)
-            const item = response.data.data
-            context.commit('setUpdatedTimesheet', item)
+            try {
+                const response = await axios.get('task-times/' + id)
+                const item = response.data.data
+                context.commit('setUpdatedTimesheet', item)
+            } catch (e) {
+                console.log(e)
+            }
         },
         async editTimesheet(context, data) {
-            const response = await axios.put('task-times/' + data.id, data.formData)
-            this.dispatch('fetchFilteredTimesheet')
+            try {
+                const response = await axios.put('task-times/' + data.id, data.formData)
+                this.dispatch('fetchFilteredTimesheet')
+            } catch (e) {
+                console.log(e)
+            }
         },
         async fetchFilteredTimesheet(context) {
-            const response = await axios.get(`task-times?date=${context.state.filterDate}&page=1`)
-            const timesheet = response.data.data
-            const totalDuration = response.data.duration_sum
-            context.commit('setTimesheet', {timesheet, totalDuration})
+            try {
+                const response = await axios.get(`task-times?date=${context.state.filterDate}&page=1`)
+                const timesheet = response.data.data
+                const totalDuration = response.data.duration_sum
+                context.commit('setTimesheet', {timesheet, totalDuration})
+            } catch (e) {
+                console.log(e)
+            }
         }
     },
     mutations: {
