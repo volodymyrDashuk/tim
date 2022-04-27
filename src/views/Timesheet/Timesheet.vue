@@ -1,11 +1,13 @@
 <template>
     <div class="dashboard">
         <div class="filter">
-<!--            <div class="filter-toolbar">-->
-<!--                <button class="button button-prev"></button>-->
-<!--                <button class="button button-next"></button>-->
-<!--            </div>-->
             <div class="filter-content">
+                <div class="filter-toolbar">
+                    <button
+                        class="button button-prev"
+                        @click="prevDay"
+                    />
+                </div>
                 <Datepicker
                     cancelText="Close"
                     v-model="date"
@@ -13,6 +15,12 @@
                     monthNameFormat="long"
                     @update:modelValue="setDate"
                 />
+                <div class="filter-toolbar">
+                    <button
+                        class="button button-next"
+                        @click="nextDay"
+                    />
+                </div>
             </div>
         </div>
         <TimesheetTable/>
