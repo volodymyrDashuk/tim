@@ -33,7 +33,11 @@
                     </small>
                 </div>
                 <div class="action-toolbar">
-                    <button type="submit" class="button-primary">Send email</button>
+                    <button
+                        type="submit"
+                        class="button-primary"
+                        :disabled='!isComplete'
+                    >Send email</button>
                 </div>
                 <div class="action-toolbar">
                     <p>Remember your password?</p>

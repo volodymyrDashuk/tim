@@ -34,6 +34,11 @@ export default {
                 type: 'info'
             });
             await this.$router.push('/');
-        },
+        }
+    },
+    computed: {
+        isComplete () {
+            return this.email && this.password;
+        }
     }
 }
