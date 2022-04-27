@@ -28,6 +28,11 @@ export default {
             this.$toast.show(`Check your email. We sent you a link to reset your password.`,  {
                 type: 'info'
             });
-        },
+        }
+    },
+    computed: {
+        isComplete () {
+            return this.email;
+        }
     }
 }
