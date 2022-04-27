@@ -6,9 +6,13 @@ export default {
     },
     actions: {
         async user(context) {
-            const response = await axios.get('me')
-            const user = response.data.data.user
-            context.commit('setUser', user)
+            try {
+                const response = await axios.get('me')
+                const user = response.data.data.user
+                context.commit('setUser', user)
+            } catch (e) {
+                console.log(e)
+            }
         }
     },
     mutations: {

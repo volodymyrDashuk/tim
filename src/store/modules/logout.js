@@ -3,9 +3,13 @@ import axios from "../../axios";
 export default {
     actions: {
         async logout() {
-            await axios.post('logout')
-            localStorage.removeItem('token')
-            localStorage.removeItem('user')
+            try {
+                await axios.post('logout')
+                localStorage.removeItem('token')
+                localStorage.removeItem('user')
+            } catch (e) {
+                console.log(e)
+            }
         }
     }
 }

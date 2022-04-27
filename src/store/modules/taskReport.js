@@ -6,10 +6,13 @@ export default {
     },
     actions: {
         async fetchTaskReport(context) {
-            const response = await axios.get('/statistics/tasks')
-            const taskReport = await response.data;
-            console.log(response.data)
-            context.commit('setTaskReport', taskReport)
+            try {
+                const response = await axios.get('/statistics/tasks')
+                const taskReport = await response.data;
+                context.commit('setTaskReport', taskReport)
+            } catch (e) {
+                console.log(e)
+            }
         }
     },
     mutations: {

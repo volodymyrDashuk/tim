@@ -21,6 +21,14 @@ export default {
         async setDate() {
             this.setFilterDate(daysMonthsYearsHelper(this.date))
             await this.fetchFilteredTimesheet()
+        },
+        prevDay() {
+            this.date = new Date(this.date.setDate(this.date.getDate() - 1))
+            this.setDate()
+        },
+        nextDay() {
+            this.date = new Date(this.date.setDate(this.date.getDate() + 1))
+            this.setDate()
         }
     },
     mounted() {
