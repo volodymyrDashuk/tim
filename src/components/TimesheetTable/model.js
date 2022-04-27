@@ -3,6 +3,7 @@ import TimesheetTableItem from '../../components/TimesheetTableItem/TimesheetTab
 import Popup from '../../components/Popup/Popup.vue'
 import Dropdown from '../../components/Dropdown/Dropdown.vue'
 import useVuelidate from "@vuelidate/core";
+import Datepicker from 'vue3-date-time-picker';
 import {required} from "@vuelidate/validators";
 import {mapActions, mapGetters} from "vuex";
 import {minutesHoursHelper, fullDateHelper} from "../../helper";
@@ -12,7 +13,8 @@ export default {
         TimesheetTableDaysFilter,
         TimesheetTableItem,
         Popup,
-        Dropdown
+        Dropdown,
+        Datepicker
     },
     setup() {
         return {v$: useVuelidate()}
@@ -26,7 +28,8 @@ export default {
             isModalShow: false,
             edit: false,
             id: 0,
-            date: ''
+            date: '',
+            editDate: ''
         };
     },
     validations() {
@@ -44,10 +47,12 @@ export default {
         },
         closeModal() {
             this.isModalShow = false
+            this.edit = false
             this.project = ''
             this.note = ''
             this.startTime = ''
             this.endTime = ''
+            this.editDate = ''
         },
         async submitHandler() {
             this.v$.$touch()
@@ -79,13 +84,12 @@ export default {
             this.edit = true
             this.id = id
             await this.getTimesheetAction(id)
-
-            // ToDo: Отдельная функция.
-            this.project = this.getUpdateTimesheet.project
+            this.project = this.getUpdateTimesheet.project.name
             this.note = this.getUpdateTimesheet.name
             this.startTime = this.getUpdateTimesheet.start_time
             this.endTime = this.getUpdateTimesheet.end_time
             this.date = this.getUpdateTimesheet.date
+            this.editDate = this.getUpdateTimesheet.date
             this.showModal()
         },
         async updateTimesheet() {
@@ -96,7 +100,7 @@ export default {
                     name: this.note,
                     start_time: minutesHoursHelper(this.startTime),
                     end_time: minutesHoursHelper(this.endTime),
-                    date: this.date
+                    date: fullDateHelper(this.editDate)
                 }
             })
             this.$toast.show(`Updated successfully.`,  {
@@ -107,7 +111,7 @@ export default {
                 this.v$.$reset()
             })
             this.edit = false
-        },
+        }
     },
     computed: {
         ...mapGetters(['getTimesheet', 'getTotalDuration', 'getUpdateTimesheet', 'getProjects']),
@@ -116,7 +120,6 @@ export default {
         }
     },
     mounted() {
-        // this.fetchTimesheet();
         this.fetchProjects();
     }
 }
