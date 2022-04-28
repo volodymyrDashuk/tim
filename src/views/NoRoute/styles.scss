@@ -12,8 +12,8 @@
     flex-direction: column;
     height: 100vh;
     background: linear-gradient(124deg,
-            var.$primary-color,
-            var.$secondary-color
+            var(--primary-color),
+            var(--secondary-color)
     );
     background-size: 1800% 1800%;
     -webkit-animation: gradient 12s ease infinite;
@@ -26,12 +26,12 @@
         display: inline-block;
         padding-right: 15px;
         animation: type .5s alternate infinite;
-        color: var.$white-basic;
+        color: var(--text-primary-color);
     }
 }
 
 @keyframes type{
-    from{box-shadow: inset -3px 0px 0px var.$white-basic;}
+    from{box-shadow: inset -3px 0px 0px var(--background-primary-color);}
     to{box-shadow: inset -3px 0px 0px transparent;}
 }
 

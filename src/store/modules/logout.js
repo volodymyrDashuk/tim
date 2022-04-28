@@ -7,6 +7,8 @@ export default {
                 await axios.post('logout')
                 localStorage.removeItem('token')
                 localStorage.removeItem('user')
+                localStorage.setItem("user-theme", '');
+                document.documentElement.className = "";
             } catch (e) {
                 console.log(e)
             }
