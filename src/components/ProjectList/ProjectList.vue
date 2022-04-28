@@ -47,7 +47,7 @@
                         <input
                             type="text"
                             placeholder="Project name"
-                            autocomplete="nope"
+                            autocomplete="off"
                             v-model.trim="projectName"
                             :class="{invalid: v$.projectName.$error}"
                             title="Project name"
@@ -65,7 +65,7 @@
                         <input
                             type="color"
                             placeholder="Project name"
-                            autocomplete="nope"
+                            autocomplete="off"
                             v-model.trim="projectColor"
                             :class="['color', {invalid: v$.projectColor.$error}]"
                             title="Project color"

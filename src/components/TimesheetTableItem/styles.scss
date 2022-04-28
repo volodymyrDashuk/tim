@@ -18,7 +18,7 @@
         align-items: center;
 
         &:not(:last-of-type) {
-            border-bottom: 1px solid var.$background-basic;
+            border-bottom: 1px solid var(--background-basic);
         }
 
         .duration {
@@ -46,7 +46,7 @@
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: var.$black-basic;
+            background: var(--black-basic);
             margin: 0 8px
         }
 
@@ -91,13 +91,13 @@
 
         .delete {
             &:before {
-                background: var.$remove-icon no-repeat;
+                background: var(--remove-icon) no-repeat;
             }
         }
 
         .edit {
             &:before {
-                background: var.$edit-icon no-repeat;
+                background: var(--edit-icon) no-repeat;
             }
         }
     }

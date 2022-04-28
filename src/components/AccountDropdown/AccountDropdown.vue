@@ -1,5 +1,6 @@
 <template>
     <div class="dropdown">
+        <Toggle />
         <div class="dropdown-button"
                 v-on:click.prevent="showDropDown=!showDropDown"
         >
