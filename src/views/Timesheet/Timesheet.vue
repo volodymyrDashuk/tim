@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <TimesheetTable/>
+        <TimesheetTable :week="week" :active="active" @isActive3="isActive4"/>
     </div>
 </template>
 
