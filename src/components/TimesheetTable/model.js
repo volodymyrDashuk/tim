@@ -16,6 +16,7 @@ export default {
         Dropdown,
         Datepicker
     },
+    props: ['week', 'active'],
     setup() {
         return {v$: useVuelidate()}
     },
@@ -111,6 +112,9 @@ export default {
                 this.v$.$reset()
             })
             this.edit = false
+        },
+        isActive2(index, item) {
+            this.$emit('isActive3', index, item)
         }
     },
     computed: {
