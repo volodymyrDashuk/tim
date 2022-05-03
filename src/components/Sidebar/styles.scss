@@ -8,7 +8,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    background: var.$primary-color;
+    background: var(--primary-color);
     width: 220px;
     padding: 20px 0 45px 15px;
     flex-shrink: 0;
@@ -44,7 +44,7 @@
 
         .logo-letter {
             font-size: 40px;
-            color: var.$white-basic;
+            color: var(--text-primary-color);
 
             @media (max-width: var.$tablet__small) {
                 font-size: 22px;
@@ -53,7 +53,7 @@
 
         .logo-ico {
             margin: 0 7px;
-            border: 1px solid var.$white-basic;
+            border: 1px solid var(--text-primary-color);
             border-radius: 25px;
             width: 18px;
             height: 33px;
@@ -70,7 +70,7 @@
                 height: 12px;
                 margin: 0 auto;
                 border-radius: 100%;
-                background-color: var.$white-basic;
+                background-color: var(--background-primary-color);
                 transition: all .3s ease-out;
             }
 
@@ -91,7 +91,7 @@
             display: flex;
             align-items: center;
             font-size: 16px;
-            color: var.$white-basic;
+            color: var(--text-primary-color);
             padding-left: 15px;
 
             @media (max-width: var.$tablet__small) {
@@ -115,7 +115,7 @@
                 position: relative;
                 top: 0;
                 right: 0;
-                background: var.$logout-icon-white no-repeat;
+                background: var(--logout-icon-white) no-repeat;
             }
         }
     }
@@ -127,7 +127,7 @@
     .navigation-link {
         display: flex;
         align-items: center;
-        color: var.$white-basic;
+        color: var(--text-primary-color);
         padding: 15px 0 15px 15px;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
@@ -146,8 +146,8 @@
 
         &:hover,
         &.active {
-            background-color: var.$background-basic;
-            color: var.$primary-color;
+            background-color: var(--background-basic);
+            color: var(--primary-color);
 
             &:before,
             &:after {
@@ -167,12 +167,12 @@
 
             &:before {
                 top: -50px;
-                box-shadow: 35px 35px 0 10px var.$background-basic;
+                box-shadow: 35px 35px 0 10px var(--background-basic);;
             }
 
             &:after {
                 bottom: -50px;
-                box-shadow: 35px -35px 0 10px var.$background-basic;
+                box-shadow: 35px -35px 0 10px var(--background-basic);;
             }
         }
     }
@@ -198,25 +198,25 @@
 
         .dashboard-icon {
             &::after {
-                background: var.$dashboard-default-icon no-repeat;
+                background: var(--dashboard-default-icon) no-repeat;
             }
         }
 
         .project-icon {
             &::after {
-                background: var.$project-default-icon no-repeat;
+                background: var(--project-default-icon) no-repeat;
             }
         }
 
         .activity-icon {
             &::after {
-                background: var.$activity-default-icon no-repeat;
+                background: var(--activity-default-icon) no-repeat;
             }
         }
 
         .timesheet-icon {
             &::after {
-                background: var.$timesheet-default-icon no-repeat;
+                background: var(--timesheet-default-icon) no-repeat;
             }
         }
 
@@ -224,25 +224,25 @@
         &.active {
             .dashboard-icon {
                 &::after {
-                    background: var.$dashboard-active-icon no-repeat;
+                    background: var(--dashboard-active-icon) no-repeat;
                 }
             }
 
             .project-icon {
                 &::after {
-                    background: var.$project-active-icon no-repeat;
+                    background: var(--project-active-icon) no-repeat;
                 }
             }
 
             .activity-icon {
                 &::after {
-                    background: var.$activity-active-icon no-repeat;
+                    background: var(--activity-active-icon) no-repeat;
                 }
             }
 
             .timesheet-icon {
                 &::after {
-                    background: var.$timesheet-active-icon no-repeat;
+                    background: var(--timesheet-active-icon) no-repeat;
                 }
             }
         }

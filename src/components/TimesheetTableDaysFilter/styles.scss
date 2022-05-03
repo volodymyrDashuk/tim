@@ -21,7 +21,7 @@
     }
 
     .day.active {
-        background: var.$primary-color;
-        color: var.$white-basic;
+        background: var(--primary-color);
+        color: var(--text-primary-color);
     }
 }

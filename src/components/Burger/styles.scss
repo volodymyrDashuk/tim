@@ -13,7 +13,7 @@
     position: absolute;
     top: 26px;
     right: 20px;
-    background: var.$burger-icon no-repeat;
+    background: var(--burger-icon) no-repeat;
 
     @media (max-width: var.$mobile__x-small) {
         display: block;

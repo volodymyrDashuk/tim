@@ -16,7 +16,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    background: var.$white-basic;
+    background: var(--background-primary-color);
     font-size: 18px;
 
     @media (max-width: var.$mobile__x-small) {
@@ -32,7 +32,6 @@
         height: 50px;
         border-radius: 50%;
         margin-bottom: 10px;
-        color: var.$white-basic;
     }
 
     .button-icon {
@@ -56,7 +55,7 @@
             right: 15px;
 
             &::after {
-                background: var.$close-icon no-repeat;
+                background: var(--close-icon) no-repeat;
             }
         }
 
@@ -66,7 +65,7 @@
             &::after {
                 width: 15px;
                 height: 15px;
-                background: var.$edit-icon-full-bg no-repeat;
+                background: var(--edit-icon-full-bg) no-repeat;
             }
         }
     }

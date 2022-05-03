@@ -43,8 +43,8 @@
         }
 
         .total {
-            font-size: 43px;
-            color: var.$primary-color;
+            font-size: 33px;
+            color: var(--primary-color);
 
             @media (max-width: var.$mobile__default) {
                 font-size: 28px;
@@ -71,13 +71,13 @@
 
         .up-icon {
             &:after {
-                background: var.$up-icon no-repeat;
+                background: var(--up-icon) no-repeat;
             }
         }
 
         .down-icon {
             &:after {
-                background: var.$down-icon no-repeat;
+                background: var(--down-icon) no-repeat;
             }
         }
     }

@@ -1,7 +1,9 @@
 import {mapActions, mapGetters} from "vuex";
+import Toggle from "@/components/Toggle/Toggle";
 
 export default {
     name: 'AccountDropdown',
+    components: {Toggle},
     data() {
         return {
             showDropDown: false

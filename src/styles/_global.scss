@@ -12,7 +12,7 @@ body {
 
 body {
     font-family: var.$font-family__primary;
-    color: var.$black-basic;
+    color: var(--text-secondary-color);
 
     & * {
         ::-webkit-scrollbar {
@@ -28,7 +28,7 @@ body {
         ::-webkit-scrollbar-thumb {
             -webkit-border-radius: 10px;
             border-radius: 10px;
-            background: var.$primary-color;
+            background: var(--primary-color);
         }
     }
 }
@@ -43,7 +43,6 @@ input {
     vertical-align: baseline;
     width: 100%;
     box-sizing: border-box;
-    color: var.$black-basic;
 
     &::placeholder {
         color: $gray1;
@@ -77,7 +76,7 @@ input {
 
     input[type="checkbox"] + label:before {
         content: "\2714";
-        border: 1px solid var.$primary-color;
+        border: 1px solid var(--primary-color);
         border-radius: 2px;
         display: inline-block;
         width: 15px;
@@ -96,21 +95,21 @@ input {
     }
 
     input[type="checkbox"]:checked + label:before {
-        background-color: var.$primary-color;
-        border-color: var.$primary-color;
-        color: var.$white-basic;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--text-primary-color);
     }
 
     input[type="checkbox"]:disabled + label:before {
         transform: scale(1);
-        border-color: var.$primary-color;
+        border-color: var(--primary-color);
         opacity: 0.5;
     }
 
     input[type="checkbox"]:checked:disabled + label:before {
         transform: scale(1);
-        background-color: var.$primary-color;
-        border-color: var.$primary-color;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
         opacity: 0.5;
     }
 
@@ -138,7 +137,7 @@ input {
         top: 0;
         width: 18px;
         height: 18px;
-        border: 1px solid var.$primary-color;
+        border: 1px solid var(--primary-color);
         border-radius: 100%;
         background: var.$white-basic;
     }
@@ -148,7 +147,7 @@ input {
         content: '';
         width: 12px;
         height: 12px;
-        background: var.$primary-color;
+        background: var(--primary-color);
         position: absolute;
         top: 4px;
         left: 4px;
@@ -226,7 +225,7 @@ input {
         text-indent: -9999px;
         width: 40px;
         height: 25px;
-        background: var.$primary-color;
+        background: var(--primary-color);
         display: block;
         border-radius: 100px;
         position: relative;
@@ -268,7 +267,7 @@ a.button-secondary {
 a {
     font-size: 14px;
     line-height: 21px;
-    color: var.$primary-color;
+    color: var(--primary-color);
     text-decoration: none;
 
     &:active {
@@ -277,11 +276,11 @@ a {
 }
 
 .button-primary {
-    border: 1px solid var.$primary-color;
+    border: 1px solid var(--primary-color);
     font-size: 14px;
     line-height: 21px;
-    color: var.$white-basic;
-    background: var.$primary-color;
+    color: var(--text-primary-color);
+    background: var(--primary-color);
     padding: 8px 30px;
     border-radius: var.$common-radius;
     max-width: 190px;
@@ -289,14 +288,14 @@ a {
 
     &:focus,
     &:active {
-        border: 1px solid darken(var.$primary-color, 5%);
-        color: var.$white-basic;
-        background: darken(var.$primary-color, 5%);
+        border: 1px solid var(--primary-color);
+        color: var(--text-primary-color);
+        background: var(--primary-color);
     }
 
     &:hover {
-        border: 1px solid var.$primary-color;
-        color: var.$primary-color;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
         background: transparent;
     }
 
@@ -310,10 +309,10 @@ a {
 }
 
 .button-secondary {
-    border: 1px solid var.$primary-color;
+    border: 1px solid var(--primary-color);
     font-size: 14px;
     line-height: 21px;
-    color: var.$primary-color;
+    color: var(--primary-color);
     background: transparent;
     padding: 8px 30px;
     border-radius: var.$common-radius;
@@ -322,15 +321,15 @@ a {
 
     &:focus,
     &:active {
-        border: 1px solid darken(var.$primary-color, 5%);
-        color: darken(var.$primary-color, 5%);
+        border: 1px solid var(--primary-color);
+        color: var(primary-color);
         background: transparent;
     }
 
     &:hover {
-        border: 1px solid var.$primary-color;
-        color: var.$white-basic;
-        background: var.$primary-color;
+        border: 1px solid var(--primary-color);
+        color: var(--text-primary-color);
+        background: var(--primary-color);
     }
 
     &.disabled,
@@ -363,10 +362,9 @@ h4 {
 }
 
 .app-container {
-    //display: flex;
     width: 100%;
     min-height: 100vh;
-    background-color: var.$background-basic;
+    background-color: var(--background-basic);
 }
 
 // ToDo: Temporary solution.
@@ -389,26 +387,28 @@ h4 {
 .dp__theme_light {
     .dp__input {
         background-color: transparent;
-        border: 1px solid var.$primary-color;
+        border: 1px solid var(--primary-color);
+        color: var(--text-secondary-color);
 
         &:hover {
-            border: 1px solid darken(var.$primary-color, 15%);
-            color: var.$black-basic;
+            border: 1px solid var(--primary-color);
+            color: var(--text-secondary-color);
         }
     }
 
     .dp__icon,
     .dp__select {
-        color: var.$primary-color;
+        color: var(--primary-color);
     }
 
     .dp__active_date {
-        background-color: var.$primary-color;
-        border: 1px solid var.$primary-color;
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
     }
 }
 
 // Styles for Toaster
 .c-toast--info {
-    background-color: darken(var.$primary-color, 10%) !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-primary-color) !important;
 }

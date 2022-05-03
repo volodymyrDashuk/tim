@@ -57,19 +57,19 @@ $transition-default: 0.25s ease-out 0.10s;
 
         .button-prev {
             &::after {
-                background: var.$arrow-left-icon no-repeat;
+                background: var(--arrow-left-icon) no-repeat;
             }
         }
 
         .button-next {
             &::after {
-                background: var.$arrow-right-icon no-repeat;
+                background: var(--arrow-right-icon) no-repeat;
             }
         }
     }
 
     .filter-toolbar {
-        padding-right: 10px;
+        padding: 0 15px;
     }
 
     .filter-toolbar.toggle {
@@ -155,14 +155,14 @@ $transition-default: 0.25s ease-out 0.10s;
 
             &#switch {
                 &:checked:before {
-                    background: var.$primary-color;
+                    background: var(--primary-color);
                 }
             }
         }
     }
 
-    //.filter-content {
-        //border-left: 1px solid gray;
-        //padding-left: 20px;
-    //}
+    .filter-content {
+        display: flex;
+        align-items: center;
+    }
 }

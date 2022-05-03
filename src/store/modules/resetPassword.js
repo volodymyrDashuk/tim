@@ -3,7 +3,11 @@ import axios from "../../axios";
 export default {
     actions: {
         async resetPassword(context, formData) {
-            await axios.post('reset-password', formData)
+            try {
+                await axios.post('reset-password', formData)
+            } catch (e) {
+                console.log(e)
+            }
         }
     }
 }
