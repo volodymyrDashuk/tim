@@ -17,6 +17,10 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: var.$mobile__x-small) {
+            padding: 25px 0;
+        }
+
         &:not(:last-of-type) {
             border-bottom: 1px solid var(--background-basic);
         }
