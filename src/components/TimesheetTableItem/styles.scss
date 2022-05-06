@@ -8,6 +8,7 @@
 .timesheet-table {
     @media (min-width: var.$tablet__small) {
         max-height: 608px;
+        min-height: 608px;
         overflow-y: scroll;
         position: relative;
     }
@@ -50,7 +51,7 @@
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: var(--black-basic);
+            background: var(--background-secondary-color);
             margin: 0 8px
         }
 
@@ -58,8 +59,7 @@
             width: 100%;
 
             .notes,
-            .separator,
-            .project {
+            .separator {
                 display: block;
             }
 
@@ -67,8 +67,14 @@
             .time,
             .project {
                 @media (max-width: var.$mobile__small) {
-                    font-size: 13Сpx;
+                    font-size: 13px;
                 }
+            }
+
+            .project {
+                display: inline-block;
+                padding: 3px 5px;
+                border-radius: 8px;
             }
         }
 

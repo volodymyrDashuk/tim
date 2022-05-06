@@ -7,12 +7,29 @@
 @import "fonts.scss";
 @import "global.scss";
 @import "reset.scss";
-@import "src/views/Timesheet/styles.scss";
-@import "src/views/Registration/styles.scss";
+@import "src/views/Dashboard/styles.scss";
+@import "src/views/ForgotPassword/styles.scss";
 @import "src/views/Login/styles.scss";
+@import "src/views/NoRoute/styles.scss";
+@import "src/views/Registration/styles.scss";
+@import "src/views/ResetPassword/styles.scss";
+@import "src/views/Timesheet/styles.scss";
+
+@import "src/components/AccountDropdown/styles.scss";
 @import "src/components/Burger/styles.scss";
+@import "src/components/Dropdown/styles.scss";
+@import "src/components/Loader/styles.scss";
 @import "src/components/Popup/styles.scss";
+@import "src/components/ProjectItem/styles.scss";
+@import "src/components/ProjectList/styles.scss";
 @import "src/components/Sidebar/styles.scss";
+@import "src/components/TaskReportList/styles.scss";
+@import "src/components/TimeReportList/styles.scss";
 @import "src/components/TimesheetTable/styles.scss";
 @import "src/components/TimesheetTableDaysFilter/styles.scss";
 @import "src/components/TimesheetTableItem/styles.scss";
+@import "src/components/Toggle/styles.scss";
+
+
+
+

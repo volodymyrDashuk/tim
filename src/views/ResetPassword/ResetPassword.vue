@@ -73,6 +73,3 @@
         </div>
     </div>
 </template>
-
-<script src="./module.js"/>
-<style lang="scss" src="./style.scss"/>
