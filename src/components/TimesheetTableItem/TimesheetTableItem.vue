@@ -15,7 +15,10 @@
                 <span class="separator"/>
                 <span class="end-time">{{ timesheetItem.end_time }}</span>
               </span>
-            <span class="project">{{ timesheetItem?.project?.name }}</span>
+            <span
+                :style="{'background-color': timesheetItem.project.color}"
+                class="project">{{ timesheetItem?.project?.name }}
+            </span>
         </div>
         <div class="action-toolbar">
             <button

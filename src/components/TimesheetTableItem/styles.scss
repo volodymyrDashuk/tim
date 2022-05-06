@@ -59,8 +59,7 @@
             width: 100%;
 
             .notes,
-            .separator,
-            .project {
+            .separator {
                 display: block;
             }
 
@@ -68,8 +67,14 @@
             .time,
             .project {
                 @media (max-width: var.$mobile__small) {
-                    font-size: 13Сpx;
+                    font-size: 13px;
                 }
+            }
+
+            .project {
+                display: inline-block;
+                padding: 3px 5px;
+                border-radius: 8px;
             }
         }
 
