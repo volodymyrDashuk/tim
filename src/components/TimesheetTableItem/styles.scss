@@ -8,6 +8,7 @@
 .timesheet-table {
     @media (min-width: var.$tablet__small) {
         max-height: 608px;
+        min-height: 608px;
         overflow-y: scroll;
         position: relative;
     }
@@ -50,7 +51,7 @@
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: var(--black-basic);
+            background: var(--background-secondary-color);
             margin: 0 8px
         }
 

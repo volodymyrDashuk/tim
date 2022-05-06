@@ -6,5 +6,3 @@
         <div class="cont_aura_2"></div>
     </div>
 </template>
-
-<style lang="scss" src="./styles.scss"/>

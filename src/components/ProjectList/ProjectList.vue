@@ -96,4 +96,3 @@
 </template>
 
 <script src="./model.js"/>
-<style lang="scss" src="./styles.scss"/>
